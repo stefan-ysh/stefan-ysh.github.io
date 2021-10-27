@@ -5,7 +5,7 @@
  - 专科/吉林电子信息职业技术学院 
  - 工作年限：3年
 <!--  - 技术博客：http://old.ftqq.com ( 使用GitHub Host的Big较高  ) -->
- - Github：http://github.com/stefan-ysh/ ( 有原创repo的Github帐号会极大的提升你的个人品牌  )
+ - Github：http://github.com/stefan-ysh/
 
 <!--  - 期望职位：PHP高级程序员，应用架构师
  - 期望薪资：税前月薪15k~20k，特别喜欢的公司可例外
