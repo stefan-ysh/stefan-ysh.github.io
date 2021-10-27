@@ -1,12 +1,11 @@
 
 # 个人信息
 
- - 冷熊/男/1990 
- - 本科/北极大学计算机系 
+ - 苑帅/男/1991
+ - 专科/吉林电子信息职业技术学院 
  - 工作年限：3年
- - 微博：[@Easy](http://weibo.com/easy) （如果没有技术相关内容，也可以不放）
- - 技术博客：http://old.ftqq.com ( 使用GitHub Host的Big较高  )
- - Github：http://github.com/easychen ( 有原创repo的Github帐号会极大的提升你的个人品牌  )
+<!--  - 技术博客：http://old.ftqq.com ( 使用GitHub Host的Big较高  ) -->
+ - Github：http://github.com/stefan-ysh/ ( 有原创repo的Github帐号会极大的提升你的个人品牌  )
 
  - 期望职位：PHP高级程序员，应用架构师
  - 期望薪资：税前月薪15k~20k，特别喜欢的公司可例外
