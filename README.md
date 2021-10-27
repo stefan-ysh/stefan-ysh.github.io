@@ -7,11 +7,11 @@
 <!--  - 技术博客：http://old.ftqq.com ( 使用GitHub Host的Big较高  ) -->
  - Github：http://github.com/stefan-ysh/ ( 有原创repo的Github帐号会极大的提升你的个人品牌  )
 
- - 期望职位：PHP高级程序员，应用架构师
+<!--  - 期望职位：PHP高级程序员，应用架构师
  - 期望薪资：税前月薪15k~20k，特别喜欢的公司可例外
- - 期望城市：北京
+ - 期望城市：北京 -->
 
-
+<!-- 
 # 工作经历
 （工作经历按逆序排列，最新的在最前边，按公司做一级分组，公司内按二级分组）
 
@@ -180,7 +180,7 @@
 - 数据库相关：MySQL/PgSQL/PDO/SQLite
 - 版本管理、文档和自动化部署工具：Svn/Git/PHPDoc/Phing/Composer
 - 单元测试：PHPUnit/SimpleTest/Qunit
-- 云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发
+- 云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发 -->
       
 ---      
 # 致谢
