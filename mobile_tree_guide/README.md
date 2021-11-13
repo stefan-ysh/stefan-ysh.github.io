@@ -61,30 +61,27 @@
 
 ## Usage
 
-1. 复制`MobileTree`到项目组件目录中
+1. 复制 `MobileTree` 组件到项目组件目录中
 2. 在需要用到该组件处引入，如：`import MobileTree from "@/components/xxx/MobileTree";`
-3. 注册组件`components: { MobileTree }`
+3. 注册组件 `components: { MobileTree }`
 
 ## Code sample
 
 > 示例中插槽为自定义方式，如无特殊需求，不建议使用。
 
 ```html
-<MobileTree 
+<MobileTree
   :data="data"
-  label="name" 
+  label="name"
   children="children"
   icon="avatar"
-  :isMultiple="true" 
+  :isMultiple="true"
   :selectedList="[]"
-  @on-submit="childSubmit" 
-  @on-cancel="childCancel" 
-  @on-select="clickItem" 
+  @on-submit="childSubmit"
   @on-search="childSearch"
-  @on-expand="childExpand" 
-  @on-bread="childBread" 
-  @on-clear="childClearSearchKey" 
-  @on-slide="childSlide"
+  @on-expand="childExpand"
+  @on-bread="childBread"
+  @on-clear="childClearSearchKey"
   @on-switch-show-type="childSwitch">
       <!-- 切换显示类型按钮插槽 -->
       <template slot="switch-show-type-btn" slot-scope="scope">
@@ -110,3 +107,43 @@
       </template>
     </MobileTree>
 ```
+
+## Function realization
+
+### 数据渲染
+
+> 将 `data` 绑定对应数据即可
+
+### 获取下级数据
+
+>1. 通过 `on-expand` 事件来获取当前需要进入的下级信息
+>2. 请求下级信息并将返回值赋值给 `data`
+
+### 单选/多选
+
+>通过给 isMultiple 绑定 `true` 或 `false` 来实现单选/多选
+
+### 提交数据
+
+>通过 `on-submit` 事件来获取已选项
+
+### 搜索数据
+
+>通过 `on-search` 事件来获取搜索关键字并作出对应操作
+
+### 清空搜索关键字
+
+>1. 通过 `on-clear` 事件来清空搜索关键字
+>2. 重新获取数据并赋值给 `data`
+
+### 切换显示类型
+
+>1. 通过 `on-switch-show-type` 事件来切换显示类型
+>2. 根据显示类型获取对应的数据
+>3. 将获取的数据赋值给 `data`
+
+### 点击导航
+
+>1. 通过 `on-bread` 事件获取当前点击的导航信息
+>2. 根据导航信息来获取对应的数据
+>3. 将获取的数据赋值给 `data`
