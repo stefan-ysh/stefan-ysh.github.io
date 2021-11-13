@@ -1,5 +1,3 @@
-title:'mobile_org_tree'
-description:'组织选择组件'
 # mobile_org_tree
 
 ## Introduction
