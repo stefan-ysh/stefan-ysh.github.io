@@ -14,8 +14,6 @@
 * [Online Demo](https://stefan-ysh.github.io/mobile_tree/)
 * [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
 
-## Example
-
 ## Tree Attributes
 
 | props            | type    | options  | default  | description                  |
