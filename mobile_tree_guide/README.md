@@ -18,16 +18,18 @@
 
 ## Tree Attributes
 
-| props            | type    | options  | default  | description                  |
-| :--------------- | :------ | :------- | :------- | :--------------------------- |
-| data             | Array   | 一       | []       | 渲染数据源                   |
-| label            | String  | 一       | name     | 展示字段名称                 |
-| nodeKey          | String  | 一       | id       | 数据 key(如: id)             |
-| isShowClearBtn   | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮 |
-| children         | String  | 一       | children | 子节点的字段名称             |
-| isMultiple       | Boolean | 一       | true     | 是否多选                     |
+| props            | type    | options | default  | description                  |
+| :--------------- | :------ | :------ | :------- | :--------------------------- |
+| data             | Array   | 一      | []       | 渲染数据源                   |
+| label            | String  | 一      | name     | 展示字段名称                 |
+| nodeKey          | String  | 一      | id       | 数据 key(如: id)             |
+| children         | String  | 一      | children | 子节点的字段名称             |
+| icon             | String  | 一      | avatar   | 头像的字段名称               |
+| isShowClearBtn   | Boolean | 一      | true     | 是否显示搜索框右侧的清除按钮 |
+| isShowAvatar     | Boolean | 一      | false    | 是否显示头像                 |
+| isMultiple       | Boolean | 一      | true     | 是否多选                     |
+| isSelectRequired | Boolean | 一      | true     | 是否必选                     |
 | selectedList     | Array   | 一       | []       | 已经选择的数据，用来回显     |
-| isSelectRequired | Boolean | 一       | true     | 是否必选                     |
 | defaultShowType  | String  | org/role | org      | 默认展示类型                 |
 | orgText          | String  | 一       | 组织     | 切换按钮org文字              |
 | roleText         | String  | 一       | 角色     | 切换按钮role文字             |
