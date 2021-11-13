@@ -11,8 +11,8 @@
 
 ## Links
 
-* [Click Here to See The Online Demo](https://stefan-ysh.github.io/mobile_tree/)
-<!-- * [Click Here to See The Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/) -->
+* [Online Demo](https://stefan-ysh.github.io/mobile_tree/)
+* [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
 
 ## Example
 
