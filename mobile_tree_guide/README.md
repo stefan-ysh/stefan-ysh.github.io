@@ -1,37 +1,41 @@
-# Mobile Org Tree
+# Mobile Org tree
 
 ## Introduction
 
 移动端树形数据选择方案，包括组织机构、角色以及人员分类等，支持单选和多选。
 
 1. 支持懒加载回调，点击获取当前组织下的子组织及人员等
-2. 支持单选和多选，通过暴露的接口传值
-3. 支持子节点展示字段自定义
-4. 丰富的事件绑定类型
+2. 支持单选和多选
+3. 支持自定义节点、nodeKey、icon等字段
+4. 丰富的事件绑定类型，实现全生命周期的监测
+5. 多部位插槽，快速实现定制化
 
 ## Links
 
 * [Online Demo](https://stefan-ysh.github.io/mobile_tree/)
 * [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
 
-## Tree Attributes
+## Tree Props
 
-| props            | type    | options  | default  | description                  |
-| :--------------- | :------ | :------- | :------- | :--------------------------- |
-| data             | Array   | 一       | []       | 渲染数据源                   |
-| label            | String  | 一       | name     | 展示字段名称                 |
-| nodeKey          | String  | 一       | id       | 数据 key(如: id)             |
-| children         | String  | 一       | children | 子节点的字段名称             |
-| icon             | String  | 一       | avatar   | 头像的字段名称               |
-| isShowClearBtn   | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮 |
-| isShowAvatar     | Boolean | 一       | false    | 是否显示头像                 |
-| isMultiple       | Boolean | 一       | true     | 是否多选                     |
-| isSelectRequired | Boolean | 一       | true     | 是否必选                     |
-| selectedList     | Array   | 一       | []       | 已经选择的数据，用来回显     |
-| slideDistance    | Number  | 一       | 100      | 滑动手时触发距离             |
-| defaultShowType  | String  | org/role | org      | 默认展示类型                 |
-| orgText          | String  | 一       | 组织     | 切换按钮org文字              |
-| roleText         | String  | 一       | 角色     | 切换按钮role文字             |
+| prop              | type    | options  | default  | description                  |
+| :---------------- | :------ | :------- | :------- | :--------------------------- |
+| data              | Array   | 一       | []       | 渲染数据源                   |
+| label             | String  | 一       | name     | 展示字段名称                 |
+| nodeKey           | String  | 一       | id       | 数据 key(如: id)             |
+| children          | String  | 一       | children | 子节点的字段名称             |
+| icon              | String  | 一       | avatar   | 头像的字段名称               |
+| isShowClearBtn    | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮 |
+| isShowAvatar      | Boolean | 一       | false    | 是否显示头像                 |
+| isMultiple        | Boolean | 一       | true     | 是否多选                     |
+| isSelectRequired  | Boolean | 一       | true     | 是否必选                     |
+| selectedList      | Array   | 一       | []       | 已经选择的数据，可用作回显   |
+| slideDistance     | Number  | 一       | 100      | 滑动手时触发距离             |
+| searchPlaceholder | String  | 一       | 搜索     | 搜索框提示占位符文字         |
+| defaultShowType   | String  | org/role | org      | 默认展示类型                 |
+| orgText           | String  | 一       | 组织     | 切换按钮org文字              |
+| roleText          | String  | 一       | 角色     | 切换按钮role文字             |
+| submitText        | String  | 一       | 提交     | 提交按钮文字                 |
+| cancelText        | String  | 一       | 取消     | 取消按钮文字                 |
 
 ## Tree Events
 
@@ -47,7 +51,7 @@
 | on-slide            | 滑动手势触发的事件                     | —             |
 | on-switch-show-type | 点击切换显示类型按钮触发               | showType      |
 
-## Tree Scoped Slot
+## Tree Slots
 
 | name                 | description            | parameter     |
 | :------------------- | :--------------------- | :------------ |
