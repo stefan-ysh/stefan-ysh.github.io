@@ -1,4 +1,4 @@
-# mobile_org_tree
+# Mobile Org Tree
 
 ## Introduction
 
