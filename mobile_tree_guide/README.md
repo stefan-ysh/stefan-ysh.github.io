@@ -2,12 +2,12 @@
 
 ## Introduction
 
-移动端树形数据选择方案，选择当前节点，提交时返回所选项，包括组织机构、角色以及人员分类，支持单选和多选。
+移动端树形数据选择方案，包括组织机构、角色以及人员分类等，支持单选和多选。
 
-1. 支持懒加载，点击获取当前组织下的子组织及人员等
+1. 支持懒加载回调，点击获取当前组织下的子组织及人员等
 2. 支持单选和多选，通过暴露的接口传值
-3. 支持回调函数，确认提交、取消提交、点击选择项
-4. 支持子节点展示字段自定义
+3. 支持子节点展示字段自定义
+4. 丰富的事件绑定类型
 
 ## Links
 
@@ -34,7 +34,7 @@
 
 ## Tree Events
 
-| name                | description                            | parameter        |
+| name                | description                            | parameter     |
 | ------------------- | -------------------------------------- | ------------- |
 | on-select           | 点击选项时触发，返回当前点击的选项信息 | item          |
 | on-submit           | 提交时触发，返回所有已选项             | selectedItems |
@@ -48,7 +48,7 @@
 
 ## Tree Scoped Slot
 
-| name                 | description            | parameter        |
+| name                 | description            | parameter     |
 | -------------------- | ---------------------- | ------------- |
 | switch-show-type-btn | 切换显示类型按钮插槽   | showType      |
 | content-area         | 内容区                 | renderData    |
@@ -63,6 +63,8 @@
 3. 注册组件`components: { MobileTree }`
 
 ## Code sample
+
+> 示例中插槽为自定义方式，如无特殊需求，不建议使用。
 
 ```html
 <MobileTree 
