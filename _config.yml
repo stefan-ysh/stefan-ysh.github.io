@@ -17,3 +17,5 @@ permalink: /:year/:month/:day/:title/
 # Build settings
 markdown: kramdown
 
+
+theme: jekyll-theme-cayman
