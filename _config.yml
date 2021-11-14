@@ -8,7 +8,7 @@ github: https://github.com/stefan-ysh
 phone: +86 18578412005
 email: stefan_ysh@foxmail.com
 
-baseurl: "/"
+baseurl: "/asas"
 
 permalink: /:year/:month/:day/:title/
 
