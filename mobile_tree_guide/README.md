@@ -17,26 +17,26 @@
 
 ## Tree Props
 
-| prop              | type    | options  | default  | description                                                                                        |
-| :---------------- | :------ | :------- | :------- | :------------------------------------------------------------------------------------------------- |
-| data              | Array   | 一       | []       | 渲染数据源                                                                                         |
-| label             | String  | 一       | name     | 展示字段名称                                                                                       |
-| nodeKey           | String  | 一       | id       | 数据 key(如: id)                                                                                   |
-| children          | String  | 一       | children | 子节点的字段名称                                                                                   |
-| icon              | String  | 一       | avatar   | 头像的字段名称                                                                                     |
-| isShowClearBtn    | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮                                                                       |
-| isShowIcon        | Boolean | 一       | false    | 是否显示图标                                                                                       |
+| prop              | type    | options  | default  | description                                                                    |
+| :---------------- | :------ | :------- | :------- | :----------------------------------------------------------------------------- |
+| data              | Array   | 一       | []       | 渲染数据源                                                                     |
+| label             | String  | 一       | name     | 展示字段名称                                                                   |
+| nodeKey           | String  | 一       | id       | 数据 key(如: id)                                                               |
+| children          | String  | 一       | children | 子节点的字段名称                                                               |
+| icon              | String  | 一       | avatar   | 头像的字段名称                                                                 |
+| isShowClearBtn    | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮                                                   |
+| isShowIcon        | Boolean | 一       | false    | 是否显示图标                                                                   |
 | defaultIcon       | String  | 一       | 一       | 默认图标，本地图片引用方式：`:defaultIcon="require('@/assets/demo/icon.jpg')"` |
-| isMultiple        | Boolean | 一       | true     | 是否多选                                                                                           |
-| isSelectRequired  | Boolean | 一       | true     | 是否必选                                                                                           |
-| selectedList      | Array   | 一       | []       | 已经选择的数据，可用作回显                                                                         |
-| slideDistance     | Number  | 一       | 100      | 滑动手时触发距离                                                                                   |
-| searchPlaceholder | String  | 一       | 搜索     | 搜索框提示占位符文字                                                                               |
-| defaultShowType   | String  | org/role | org      | 默认展示类型                                                                                       |
-| orgText           | String  | 一       | 组织     | 切换按钮 org 文字                                                                                  |
-| roleText          | String  | 一       | 角色     | 切换按钮 role 文字                                                                                 |
-| submitText        | String  | 一       | 提交     | 提交按钮文字                                                                                       |
-| cancelText        | String  | 一       | 取消     | 取消按钮文字                                                                                       |
+| isMultiple        | Boolean | 一       | true     | 是否多选                                                                       |
+| isSelectRequired  | Boolean | 一       | true     | 是否必选                                                                       |
+| selectedList      | Array   | 一       | []       | 已经选择的数据，可用作回显                                                     |
+| slideDistance     | Number  | 一       | 100      | 滑动手时触发距离                                                               |
+| searchPlaceholder | String  | 一       | 搜索     | 搜索框提示占位符文字                                                           |
+| defaultShowType   | String  | org/role | org      | 默认展示类型                                                                   |
+| orgText           | String  | 一       | 组织     | 切换按钮 org 文字                                                              |
+| roleText          | String  | 一       | 角色     | 切换按钮 role 文字                                                             |
+| submitText        | String  | 一       | 提交     | 提交按钮文字                                                                   |
+| cancelText        | String  | 一       | 取消     | 取消按钮文字                                                                   |
 
 ## Tree Events
 
@@ -104,7 +104,7 @@
      children="children"
      icon="avatar"
      :isMultiple="true"
-     :selectedList="[]"
+     :selectedList="selectedList"
      @on-submit="handleSubmit"
      @on-search="handleSearch"
      @on-expand="handleExpand"
@@ -116,29 +116,27 @@
    <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
      <!-- 切换显示类型按钮插槽 -->
      <template slot="switch-show-type-btn" slot-scope="scope">
-       <button>{{scope.row}}</button>
+       通过 scope.showType 来获取切换的显示类型
      </template>
 
-     <!-- 内容区 -->
+     <!-- 内容区插槽 -->
      <template slot="content-area" slot-scope="scope">
-       <li class="org-tree__item" v-for="(item, index) in scope.row" :key="index">
-         {{item.name}}
-       </li>
+       通过 scope.renderData 来获取显示区数据
      </template>
 
-     <!-- 无数据时提示信息 -->
+     <!-- 无数据提示信息插槽 -->
      <template slot="empty-tips">
        暂无数据
      </template>
 
-     <!-- 已经选择项的集合展示区 -->
+     <!-- 底部已选项展示区插槽 -->
      <template slot="selected-list" slot-scope="scope">
-       {{scope}}
+       通过 scope.selectedItems 来获取已选项数据
      </template>
 
-     <!-- 底部操作区 -->
+     <!-- 底部操作区插槽 -->
      <template slot="result-area" slot-scope="scope">
-       {{scope.row}}
+       通过 scope.selectedItems 来获取已选项数据
      </template>
 
    </MobileTree>
