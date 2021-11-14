@@ -112,29 +112,35 @@
      @on-clear="childClearSearchKey"
      @on-switch-show-type="childSwitch"
    >
+   
    <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
      <!-- 切换显示类型按钮插槽 -->
      <template slot="switch-show-type-btn" slot-scope="scope">
        <button>{{scope.row}}</button>
      </template>
+
      <!-- 内容区 -->
      <template slot="content-area" slot-scope="scope">
        <li class="org-tree__item" v-for="(item, index) in scope.row" :key="index">
          {{item.name}}
        </li>
      </template>
+
      <!-- 无数据时提示信息 -->
      <template slot="empty-tips">
        暂无数据
      </template>
+
      <!-- 已经选择项的集合展示区 -->
      <template slot="selected-list" slot-scope="scope">
        {{scope}}
      </template>
+
      <!-- 底部操作区 -->
      <template slot="result-area" slot-scope="scope">
        {{scope.row}}
      </template>
+
    </MobileTree>
    ```
 
