@@ -12,7 +12,7 @@ baseurl: "/"
 
 permalink: /:year/:month/:day/:title/
 
-exclude: ['README.md']
+# exclude: ['README.md']
 
 # Build settings
 markdown: kramdown
