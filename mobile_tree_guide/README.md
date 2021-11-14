@@ -17,26 +17,26 @@
 
 ## Tree Props
 
-| prop              | type    | options  | default  | description                                                                                 |
-| :---------------- | :------ | :------- | :------- | :------------------------------------------------------------------------------------------ |
-| data              | Array   | 一       | []       | 渲染数据源                                                                                  |
-| label             | String  | 一       | name     | 展示字段名称                                                                                |
-| nodeKey           | String  | 一       | id       | 数据 key(如: id)                                                                            |
-| children          | String  | 一       | children | 子节点的字段名称                                                                            |
-| icon              | String  | 一       | avatar   | 头像的字段名称                                                                              |
-| isShowClearBtn    | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮                                                                |
-| isShowAvatar      | Boolean | 一       | false    | 是否显示图标                                                                                |
-| defaultIcon       | String  | 一       | ——       | 默认图标，网络链接可以直接用，本地路径引用方式：`:defaultIcon="require('assets/demo/icon.jpg')"` |
-| isMultiple        | Boolean | 一       | true     | 是否多选                                                                                    |
-| isSelectRequired  | Boolean | 一       | true     | 是否必选                                                                                    |
-| selectedList      | Array   | 一       | []       | 已经选择的数据，可用作回显                                                                  |
-| slideDistance     | Number  | 一       | 100      | 滑动手时触发距离                                                                            |
-| searchPlaceholder | String  | 一       | 搜索     | 搜索框提示占位符文字                                                                        |
-| defaultShowType   | String  | org/role | org      | 默认展示类型                                                                                |
-| orgText           | String  | 一       | 组织     | 切换按钮 org 文字                                                                           |
-| roleText          | String  | 一       | 角色     | 切换按钮 role 文字                                                                          |
-| submitText        | String  | 一       | 提交     | 提交按钮文字                                                                                |
-| cancelText        | String  | 一       | 取消     | 取消按钮文字                                                                                |
+| prop              | type    | options  | default  | description                                                                                      |
+| :---------------- | :------ | :------- | :------- | :----------------------------------------------------------------------------------------------- |
+| data              | Array   | 一       | []       | 渲染数据源                                                                                       |
+| label             | String  | 一       | name     | 展示字段名称                                                                                     |
+| nodeKey           | String  | 一       | id       | 数据 key(如: id)                                                                                 |
+| children          | String  | 一       | children | 子节点的字段名称                                                                                 |
+| icon              | String  | 一       | avatar   | 头像的字段名称                                                                                   |
+| isShowClearBtn    | Boolean | 一       | true     | 是否显示搜索框右侧的清除按钮                                                                     |
+| isShowAvatar      | Boolean | 一       | false    | 是否显示图标                                                                                     |
+| defaultIcon       | String  | 一       | 一       | 默认图标，网络链接可以直接用，本地路径引用方式：`:defaultIcon="require('assets/demo/icon.jpg')"` |
+| isMultiple        | Boolean | 一       | true     | 是否多选                                                                                         |
+| isSelectRequired  | Boolean | 一       | true     | 是否必选                                                                                         |
+| selectedList      | Array   | 一       | []       | 已经选择的数据，可用作回显                                                                       |
+| slideDistance     | Number  | 一       | 100      | 滑动手时触发距离                                                                                 |
+| searchPlaceholder | String  | 一       | 搜索     | 搜索框提示占位符文字                                                                             |
+| defaultShowType   | String  | org/role | org      | 默认展示类型                                                                                     |
+| orgText           | String  | 一       | 组织     | 切换按钮 org 文字                                                                                |
+| roleText          | String  | 一       | 角色     | 切换按钮 role 文字                                                                               |
+| submitText        | String  | 一       | 提交     | 提交按钮文字                                                                                     |
+| cancelText        | String  | 一       | 取消     | 取消按钮文字                                                                                     |
 
 ## Tree Events
 
