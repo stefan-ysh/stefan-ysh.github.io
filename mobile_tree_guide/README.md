@@ -105,14 +105,14 @@
      icon="avatar"
      :isMultiple="true"
      :selectedList="[]"
-     @on-submit="childSubmit"
-     @on-search="childSearch"
-     @on-expand="childExpand"
-     @on-bread="childBread"
-     @on-clear="childClearSearchKey"
-     @on-switch-show-type="childSwitch"
+     @on-submit="handleSubmit"
+     @on-search="handleSearch"
+     @on-expand="handleExpand"
+     @on-nav="handleNav"
+     @on-clear="clearSearchKey"
+     @on-switch-show-type="handleSwitchShowType"
    >
-   
+
    <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
      <!-- 切换显示类型按钮插槽 -->
      <template slot="switch-show-type-btn" slot-scope="scope">
