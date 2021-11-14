@@ -1,20 +1,19 @@
-theme: jekyll-theme-cayman
-# 个人名称或昵称
-name: 苑帅
-# 页面个人头像信息中地址展示信息
-location: 广州
-# 页面个人头像信息中公司展示信息
-company: 广东思创
-# 页面个人头像信息中职位展示信息
-position: 前端开发工程师
-# 页面个人头像信息中GITHUB展示信息
-github: https://github.com/stefan-ysh
-# # 页面个人头像信息中Facebook展示信息
-# facebook: https://www.facebook.com/XXXX
-# 页面个人头像信息中电话展示信息
-phone: +86 18578412005
-# 页面个人头像信息中EMAIL展示信息
-email: stefan_ysh@foxmail.com
+# Site settings
+name: 董小姐
+location: 大连
+company: IBM
+position: Java开发工程师
+github: https://github.com/
+facebook: https://www.facebook.com/
+phone: 1580424XXXX
+email: xxxx@xxx.com
 
-#本项目的baseurl
-# baseurl: "/resume.io"
+baseurl: "/resume.io"
+
+permalink: /:year/:month/:day/:title/
+
+exclude: ['README.md']
+
+# Build settings
+markdown: kramdown
+
