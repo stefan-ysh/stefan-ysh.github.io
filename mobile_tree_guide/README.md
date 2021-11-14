@@ -112,7 +112,7 @@
      @on-clear="childClearSearchKey"
      @on-switch-show-type="childSwitch"
    >
-   <!-- 此处插槽为自定义方式，如无特殊需求，不建议使用。 -->
+   <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
      <!-- 切换显示类型按钮插槽 -->
      <template slot="switch-show-type-btn" slot-scope="scope">
        <button>{{scope.row}}</button>
