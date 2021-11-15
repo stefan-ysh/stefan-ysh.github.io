@@ -10,19 +10,20 @@
 4. 多事件绑定类型，实现全生命周期全监测
 5. 多部位插槽，支持默认样式以及快速实现定制化
 
-<!-- <div align="center">
-<img src="https://stefan-ysh.github.io/mobile_tree_guide/images/modules.png" />
-</div>
-<div align="center">
-<img src="https://stefan-ysh.github.io/mobile_tree_guide/images/instructions.png" />
-</div> -->
+## Modules
+
 <div align="center">
 <img src="https://stefan-ysh.github.io/mobile_tree_guide/images/modules.jpg" />
 </div>
+
+## Instructions
+
 <div align="center">
 <img src="https://stefan-ysh.github.io/mobile_tree_guide/images/instructions.jpg" />
 </div>
+
 ## Links
+
 - [Online Demo](http://120.78.207.151/dist/)
 - [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
 
@@ -80,11 +81,11 @@
    ```bash
    MobileOrgTree
     ├── src
-    │   ├── App.vue
-    │   ├── components
-    │   │   └── MobileTree
-    │   │       └── MobileTree.vue
-    │   └── main.js
+    │   ├── App.vue
+    │   ├── components
+    │   │   └── MobileTree
+    │   │       └── MobileTree.vue
+    │   └── main.js
     └── vue.config.js
    ```
 
@@ -100,9 +101,9 @@
    <script>
      export default {
        components: {
-         MobileTree
-        }
-      }
+         MobileTree,
+       },
+     };
    </script>
    ```
 
@@ -123,8 +124,7 @@
      @on-clear="clearSearchKey"
      @on-switch-show-type="handleSwitchShowType"
    >
-
-   <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
+     <!-- 此处示例插槽只做展示，非必需，如无特殊需求，不建议使用。 -->
      <!-- 切换显示类型按钮插槽 -->
      <template slot="switch-show-type-btn" slot-scope="scope">
        通过 scope.showType 来获取切换的显示类型
@@ -149,7 +149,6 @@
      <template slot="result-area" slot-scope="scope">
        通过 scope.selectedItems 来获取已选项数据
      </template>
-
    </MobileTree>
    ```
 
@@ -161,8 +160,8 @@
 
 ### 获取下级数据
 
-> 1. 通过 `on-expand` 事件来获取当前需要进入的下级信息
-> 2. 请求下级信息并将返回值赋值给 `data`
+> 1. 通过 `on-expand` 事件来获取当前级信息
+> 2. 通过当前级 `id` 或其他标识来请求下级信息并将返回值赋值给 `data`
 
 ### 单选/多选
 
@@ -170,7 +169,7 @@
 
 ### 提交数据
 
-> 通过 `on-submit` 事件来获取已选项
+> 通过 `on-submit` 绑定的事件来获取已选项信息
 
 ### 搜索数据
 
@@ -193,6 +192,5 @@
 > 2. 根据导航信息来获取对应的数据
 > 3. 将获取的数据赋值给 `data`
 > 4. 接收参数为 `-1` 时，表示当前点击的为 `全部`
-
 
 <a href="#">回到顶部</a>
