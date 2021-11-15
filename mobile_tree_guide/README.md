@@ -10,6 +10,7 @@
 4. 多事件绑定类型，实现全生命周期全监测
 5. 多部位插槽，支持默认样式以及快速实现定制化
 
+![1](https://stefan-ysh.github.io/mobile_tree_guide/images/1.jpg)
 ## Links
 - [Online Demo](http://120.78.207.151/dist/)
 - [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
