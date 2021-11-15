@@ -77,7 +77,7 @@
 
 ## Usage
 
-1. 复制 `MobileTree` 组件到项目组件目录中，如：
+1. 将下载的组件 `MobileTree.vue` 复制到项目组件目录中，如：
 
    ```bash
    MobileOrgTree
