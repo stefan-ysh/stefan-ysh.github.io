@@ -11,7 +11,6 @@
 5. 多部位插槽，支持默认样式以及快速实现定制化
 
 ## Links
-![1](./1.jpg)
 - [Online Demo](http://120.78.207.151/dist/)
 - [Online Docs](https://stefan-ysh.github.io/mobile_tree_guide/)
 
