@@ -49,7 +49,7 @@
       </div>
       <!-- 内容显示区 -->
       <div class="org-tree__warp">
-        <ul>
+        <ul class="org-tree__ul">
           <template v-if="renderData.length > 0">
             <slot name="content-area" :renderData="renderData">
               <li
@@ -148,58 +148,72 @@ export default {
       type: Array,
       default: () => [],
     },
+    
     defaultIcon: {
       type: String,
       default: "",
     },
+
     label: {
       type: String,
       default: "name",
     },
+
     nodeKey: {
       type: String,
       default: "id",
     },
+
     children: {
       type: String,
       default: "children",
     },
+
     icon: {
       type: String,
       default: "avatar",
     },
+
     isShowClearBtn: {
       type: Boolean,
       default: true,
     },
+
     searchPlaceholder: {
       type: String,
       default: "搜索",
     },
+
     submitText: {
       type: String,
       default: "提交",
     },
+
     cancelText: {
       type: String,
       default: "取消",
     },
+
     isShowIcon: {
       type: Boolean,
       default: false,
     },
+
     isMultiple: {
       type: Boolean,
       default: true,
     },
+
     isSelectRequired: {
       type: Boolean,
       default: true,
     },
+
     selectedList: {
       type: Array,
-      default: [],
+      default: () => [],
     },
+
     slideDistance: {
       type: Number,
       default: 100,
@@ -210,10 +224,12 @@ export default {
       type: String,
       default: "org",
     },
+
     orgText: {
       type: String,
       default: "组织",
     },
+
     roleText: {
       type: String,
       default: "角色",
@@ -224,14 +240,19 @@ export default {
     return {
       // 当前数据
       currentData: [],
+
       // 已选择的数据集合
       selectedItems: [],
+
       // 用来渲染的数据源
       renderData: [],
+
       // 搜索关键词
       searchKey: "",
+
       // 鼠标按下时候的初始 x 坐标
       startX: "",
+
       showType: ""
     };
   },
@@ -269,10 +290,12 @@ export default {
         case "org":
           this.showType = "role";
           this.currentData = [];
+          this.searchKey = ''
           break;
         case "role":
           this.showType = "org";
           this.currentData = [];
+          this.searchKey = ''
         default:
           break;
       }
@@ -369,7 +392,7 @@ export default {
     clearSearchKey() {
       this.searchKey = "";
       this.$emit("on-clear");
-    }
+    },
   },
 
   watch: {
@@ -378,7 +401,7 @@ export default {
         this.showType = newVal;
       },
       deep: true,
-      immediate: true
+      immediate: true,
     },
 
     // 监听父组件传来的值
@@ -386,9 +409,9 @@ export default {
       handler(val) {
         this.renderData = val;
       },
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 };
 </script>
 
@@ -505,6 +528,7 @@ input[type="search"]::-webkit-search-cancel-button {
   color: #999;
   text-align: center;
 }
+
 .org-tree .org-tree__warp .org-tree__ul {
   height: calc(100vh - 16rem);
   overflow: auto;
@@ -654,7 +678,6 @@ input[type="search"]::-webkit-search-cancel-button {
   display: inline-block;
   /* height: 1.3rem; */
   padding: 0 5px;
-  /* line-height: 19px; */
   line-height: 1.3rem;
   font-size: 15px;
   color: #409eff;
