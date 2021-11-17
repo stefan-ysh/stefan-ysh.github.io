@@ -232,7 +232,7 @@ export default {
       searchKey: "",
       // 鼠标按下时候的初始 x 坐标
       startX: "",
-      showType: "",
+      showType: ""
     };
   },
 
@@ -369,19 +369,26 @@ export default {
     clearSearchKey() {
       this.searchKey = "";
       this.$emit("on-clear");
-    },
+    }
   },
 
   watch: {
     defaultShowType: {
       handler(newVal, oldVal) {
         this.showType = newVal;
-        // console.log(newVal, oldVal);
       },
       deep: true,
-      immediate: true,
+      immediate: true
     },
-  },
+
+    // 监听父组件传来的值
+    data: {
+      handler(val) {
+        this.renderData = val;
+      },
+      immediate: true
+    }
+  }
 };
 </script>
 
