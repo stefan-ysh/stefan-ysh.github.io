@@ -655,6 +655,7 @@ input[type="search"]::-webkit-search-cancel-button {
   /* height: 1.3rem; */
   padding: 0 5px;
   /* line-height: 19px; */
+  line-height: 1.3rem;
   font-size: 15px;
   color: #409eff;
   border: 1px solid #d9ecff;
