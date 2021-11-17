@@ -505,7 +505,10 @@ input[type="search"]::-webkit-search-cancel-button {
   color: #999;
   text-align: center;
 }
-
+.org-tree .org-tree__warp .org-tree__ul {
+  height: calc(100vh - 15rem);
+  overflow: auto;
+}
 .org-tree .org-tree__warp .org-tree__item {
   border-bottom: 1px solid #eee;
   height: 38px;
