@@ -506,7 +506,7 @@ input[type="search"]::-webkit-search-cancel-button {
   text-align: center;
 }
 .org-tree .org-tree__warp .org-tree__ul {
-  height: calc(100vh - 15rem);
+  height: calc(100vh - 16rem);
   overflow: auto;
 }
 .org-tree .org-tree__warp .org-tree__item {
