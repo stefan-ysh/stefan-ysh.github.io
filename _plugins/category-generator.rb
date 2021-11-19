@@ -8,7 +8,7 @@ module Jekyll
       @name = 'index.html'
 
       self.process(@name)
-      self.read_yaml(File.join(base, 'category'), 'category-page.html')
+      self.read_yaml(File.join(base, '_layouts'), 'category-page.html')
       self.data['category'] = category
       self.data['title'] = category
     end
