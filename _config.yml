@@ -2,7 +2,7 @@ title: Welcome to Mzone
 description: It's my zone for record my working and life.
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "flexton.netlify.com" # the base hostname & protocol for your site, e.g. http://example.com
-
+Permissions-Policy: interest-cohort=()
 # Author
 author-name:    Yuan Shuai
 author-image:   1.jpg
