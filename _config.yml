@@ -5,7 +5,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # Author
 author-name:    Yuan Shuai
-author-image:   1.jpg
+author-image:   avatar.jpg
 author-job:     Web Developer
 author-email:   stefan_ysh@foxmail.com # Add your email for contant form.
 author-twitter: stefan_ysh # Add your twitter account
