@@ -1,0 +1,30 @@
+{
+  "name": "ysh-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefan-ysh/stefan-ysh.github.io"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefan-ysh/stefan-ysh.github.io/issues"
+  },
+  "homepage": "https://github.com/stefan-ysh/stefan-ysh.github.io/#readme",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.1",
+    "moment": "^2.26.0",
+    "vuepress": "^1.5.1",
+    "vuepress-plugin-image": "^1.0.4",
+    "vuepress-theme-reco": "^1.4.6"
+  },
+  "dependencies": {}
+}
