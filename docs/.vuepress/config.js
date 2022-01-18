@@ -66,8 +66,7 @@ module.exports = {
           },
           {
             text: "学习",
-            link:
-              "/pages/learn/",
+            link: "/pages/learn/",
             icon: "reco-document",
           },
         ],
@@ -164,35 +163,35 @@ module.exports = {
           children: [
             {
               title: "HTML",
-              collapsable: false,
+              collapsable: true,
               sidebarDepth: 1,
-              children: [["share.md", "福利向"]],
+              children: [["html/element.md", "HTML"]],
             },
             {
               title: "CSS",
-              collapsable: false,
+              collapsable: true,
               sidebarDepth: 1,
-              children: [["share.md", "福利向"]],
+              children: [["css/selector.md", "选择器"]],
             },
             {
               title: "Javascript",
-              collapsable: false,
+              collapsable: true,
               sidebarDepth: 1,
-              children: [["share.md", "福利向"]],
+              children: [["javascript/data-type.md", "数据类型"]],
             },
           ],
         },
-        {
-          title: "node",
-          collapsable: false,
-          sidebarDepth: 1,
-          children: [["share.md", "福利向"]],
-        },
+        // {
+        //   title: "node",
+        //   collapsable: false,
+        //   sidebarDepth: 1,
+        //   children: [["share.md", "福利向"]],
+        // },
         {
           title: "其他",
           collapsable: false,
           sidebarDepth: 1,
-          children: [["share.md", "福利向"]],
+          children: [["other/how-to-copy-in-csdn.md", "csdn免登陆破解"]],
         },
       ],
       "/pages/reading-notes/": [
