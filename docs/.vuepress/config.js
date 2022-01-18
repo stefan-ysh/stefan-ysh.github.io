@@ -53,34 +53,29 @@ module.exports = {
     logo: "/avatar.jpeg",
     nav: [
       { text: "Home", link: "/", icon: "reco-home" },
-      // {
-      //   text: "文章",
-      //   ariaLabel: "文章",
-      //   icon: "reco-category",
-      //   // items: [
-      //   //   {
-      //   //     text: "简介",
-      //   //     link: "/pages/me/introduce.md",
-      //   //     icon: "reco-faq",
-      //   //   },
-      //   //   {
-      //   //     text: "笔记",
-      //   //     link:
-      //   //       "/pages/reading-notes/ProfessionalJavaScriptForWebDevelopers/什么是JavaScript.md",
-      //   //     icon: "reco-document",
-      //   //   },
-      //   // ],
-      // },
+      // { text: "文章", link: "/pages/learn/", icon: "reco-suggestion" },
       {
-        text: "读书笔记",
-        link: "/pages/reading-notes/",
+        text: "笔记",
+        ariaLabel: "笔记",
         icon: "reco-suggestion",
+        items: [
+          {
+            text: "读书",
+            link: "/pages/reading-notes/",
+            icon: "reco-faq",
+          },
+          {
+            text: "学习",
+            link:
+              "/pages/learn/",
+            icon: "reco-document",
+          },
+        ],
       },
-      { text: "学习笔记", link: "/pages/learn/", icon: "reco-suggestion" },
       { text: "日常", link: "/pages/daily/", icon: "reco-suggestion" },
       { text: "分享", link: "/pages/share/", icon: "reco-three" },
       { text: "TimeLine", link: "/timeline/", icon: "reco-date" },
-      { text: "简介", link: "/pages/me/index.md", icon: "reco-faq" },
+      { text: "简介", link: "/pages/me/index.md", icon: "reco-document" },
       {
         text: "Github",
         link: "https://github.com/stefan-ysh",
