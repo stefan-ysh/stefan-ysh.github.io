@@ -80,7 +80,7 @@ isShowComments: true
 
 此时我们粘贴到控制台看一下效果，发现粘贴也成功了，按理说现在已经算是解决了问题，但是作为一向追求完美（懒）的我来说，这还远远不够，毕竟复制完再删除下面三行的操作真的很傻。
 
-<img <img src='/share/other/how-to-copy-in-csdn/3.jpg'  align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='/share/other/how-to-copy-in-csdn/3.jpg'  align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 ### 剪贴板净化
 
@@ -122,3 +122,26 @@ document.addEventListener('copy', function (e) {
 ```javascript
 javascript:document.addEventListener('copy',function(e){e.preventDefault();var textArr=window.getSelection().toString().split('\t');var pasteText='';textArr.forEach(function(e){pasteText+=e;});e.clipboardData.setData('text',pasteText);console.log('Clipboard has been purged successfully,the content is as follows：\n\n'+pasteText)});var preElement=document.getElementsByTagName('pre');var codeElement=document.getElementsByTagName('code');console.clear();console.log(`%c ${preElement.length} pre element${preElement.length>1?'s':''} and ${codeElement.length} code element${codeElement.length>1?'s':''} were found in total.`,"color:red;font-weight:bold;font-size:15px;");console.time("Elapsed time: ");for(let i=0;i<=preElement.length-1;i++){preElement[i].style.userSelect='text';console.log(`%c ${i+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");}for(let i=0;i<=codeElement.length-1;i++){codeElement[i].style.userSelect='text';console.log(`%c ${i+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");}console.timeEnd("Elapsed time: ");
 ```
+2. 在浏览器中创建一个书签
+
+<img src='/share/other/how-to-copy-in-csdn/4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+
+3. 右键`步骤2`创建的书签，进行修改
+
+<img src='/share/other/how-to-copy-in-csdn/5.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+
+4. 将`步骤1`中复制的代码，粘贴到书签的网址一栏
+
+- 修改前
+
+<img src='/share/other/how-to-copy-in-csdn/6.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+
+- 修改后
+
+<img src='/share/other/how-to-copy-in-csdn/7.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+
+5.至此就已经完成了，碰到需要复制的地方，点一下你所创建的书签，就可以随便复制啦。
+
+## 结语
+
+版本比较粗糙，因为最近有点忙，后续有打算继续更新一些功能，以及完善文档。

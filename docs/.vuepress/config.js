@@ -191,7 +191,10 @@ module.exports = {
           title: "其他",
           collapsable: false,
           sidebarDepth: 1,
-          children: [["other/how-to-copy-in-csdn.md", "csdn免登陆破解"]],
+          children: [
+            ["other/how-to-copy-in-csdn.md", "csdn免登陆破解"],
+            ["other/cascade-select-cleanup.md", "级联选择清除"]
+          ],
         },
       ],
       "/pages/reading-notes/": [
