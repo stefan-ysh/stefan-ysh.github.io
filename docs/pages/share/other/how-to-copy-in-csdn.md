@@ -3,13 +3,14 @@ title: csdn免登录复制及剪贴板净化
 date: 2022-01-19
 categories:
 tags:
+  - CSDN
 # publish: true
 isShowComments: true
 ---
 
 ## 背景描述
 
-我们在百度搜索问题的时候，特别是IT相关的问题，如果不做限制，多数情况下都会点进CSDN这个网站，（虽然充斥着各种搬运合广告，但是不可否认的是用户基数确实大）这时候就会出现一些问题，比如需要登陆才能复制代码块，等你登陆并复制之后，等到粘贴的时候发现代码段后缀增加了该文章的链接等无用信息，这种情况下非常苦恼，如图
+我们在百度搜索问题的时候，特别是 IT 相关的问题，如果不做限制，多数情况下都会点进 CSDN 这个网站，（虽然充斥着各种搬运合广告，但是不可否认的是用户基数确实大）这时候就会出现一些问题，比如需要登陆才能复制代码块，等你登陆并复制之后，等到粘贴的时候发现代码段后缀增加了该文章的链接等无用信息，这种情况下非常苦恼，如图
 
 - 需登录才能复制（这段代码是模拟代码，你可以尝试复制这段代码）
 
@@ -36,6 +37,7 @@ isShowComments: true
     };
     </code>
 </pre>
+
 - 复制的代码片段粘贴的时候会出现广告后缀
 
 ```javascript
@@ -89,25 +91,28 @@ isShowComments: true
 这涉及到浏览器的复制功能，CSDN 会通过浏览器的默认复制功能来将后缀塞进去，所以针对这一原因，解决方法是：
 
 1. 取消浏览器的默认复制事件
-2. 通过 [window.getSelection()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getSelection) api来获得页面中当前被选取到的内容
-3. 将步骤 2 获取到的内容通过 clipboardData.setData() api设置到到剪切板中
+2. 通过 [window.getSelection()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getSelection) api 来获得页面中当前被选取到的内容
+3. 将步骤 2 获取到的内容通过 clipboardData.setData() api 设置到到剪切板中
 
 ```javascript
-document.addEventListener('copy', function (e) {
+document.addEventListener("copy", function(e) {
   // step 1
   // 阻止默认事件：就是阻止Ctrl + C 或 鼠标右键复制的默认事件
   // 因为如果使用默认事件，csdn 就会通过这个渠道向复制到的内容里面塞进去最后三行
-  e.preventDefault(); 
+  e.preventDefault();
   // step 2
   // 此处需要对数据进行一些处理
-  var textArr = window.getSelection().toString().split('\t');
-  var pasteText = '';
-  textArr.forEach(function (e) {
+  var textArr = window
+    .getSelection()
+    .toString()
+    .split("\t");
+  var pasteText = "";
+  textArr.forEach(function(e) {
     pasteText += e;
   });
   // step 3
   // 此步骤完成后，所选择的内容就已经存到剪切板中了，到指定位置或者IDE直接粘贴即可
-  e.clipboardData.setData('text', pasteText);
+  e.clipboardData.setData("text", pasteText);
 });
 ```
 
@@ -122,6 +127,7 @@ document.addEventListener('copy', function (e) {
 ```javascript
 javascript:document.addEventListener('copy',function(e){e.preventDefault();var textArr=window.getSelection().toString().split('\t');var pasteText='';textArr.forEach(function(e){pasteText+=e;});e.clipboardData.setData('text',pasteText);console.log('Clipboard has been purged successfully,the content is as follows：\n\n'+pasteText)});var preElement=document.getElementsByTagName('pre');var codeElement=document.getElementsByTagName('code');console.clear();console.log(`%c ${preElement.length} pre element${preElement.length>1?'s':''} and ${codeElement.length} code element${codeElement.length>1?'s':''} were found in total.`,"color:red;font-weight:bold;font-size:15px;");console.time("Elapsed time: ");for(let i=0;i<=preElement.length-1;i++){preElement[i].style.userSelect='text';console.log(`%c ${i+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");}for(let i=0;i<=codeElement.length-1;i++){codeElement[i].style.userSelect='text';console.log(`%c ${i+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");}console.timeEnd("Elapsed time: ");
 ```
+
 2. 在浏览器中创建一个书签
 
 <img src='/share/other/how-to-copy-in-csdn/4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
