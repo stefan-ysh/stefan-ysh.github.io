@@ -193,7 +193,8 @@ module.exports = {
           sidebarDepth: 1,
           children: [
             ["other/how-to-copy-in-csdn.md", "csdn免登陆破解"],
-            ["other/cascade-select-cleanup.md", "级联选择清除"]
+            ["other/cascade-select-cleanup.md", "级联选择清除"],
+            ["other/register-vue-component.md", "全局注册vue组件"]
           ],
         },
       ],
