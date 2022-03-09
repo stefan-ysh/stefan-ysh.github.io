@@ -19,7 +19,7 @@ module.exports = {
   description: "A quiet place for me.",
   head: [
     ["link", { rel: "icon", href: "avatar.jpeg" }],
-    ["link", { rel: "stylesheet", href: "/daily/font.css" }],
+    ["link", { rel: "stylesheet", href: "/moment/font.css" }],
     ["meta", { name: "author", content: "苑帅" }],
     ["meta", { name: "keywords", content: "苑帅 vuepress 前端 记录 笔记" }],
     [
@@ -71,7 +71,7 @@ module.exports = {
           },
         ],
       },
-      { text: "日常", link: "/pages/daily/", icon: "reco-suggestion" },
+      { text: "说说", link: "/pages/moment/", icon: "reco-suggestion" },
       { text: "分享", link: "/pages/share/", icon: "reco-three" },
       { text: "TimeLine", link: "/timeline/", icon: "reco-date" },
       { text: "简介", link: "/pages/me/index.md", icon: "reco-document" },
@@ -110,7 +110,7 @@ module.exports = {
           children: [["css/first.md", "初识css"]],
         },
       ],
-      "/pages/daily/": [
+      "/pages/moment/": [
         {
           title: "2022年",
           collapsable: true,
@@ -124,18 +124,25 @@ module.exports = {
               sidebarDepth: 1,
               children: [
                 ["2022/01/15-my-first-post.md", "15日"],
-                ["2022/01/15-test-daily.md", "15日"],
+                ["2022/01/15-test-moment.md", "15日"],
               ],
             },
-            // {
-            //   title: "2月",
-            //   collapsable: true,
-            //   sidebarDepth: 1,
-            //   children: [
-            //     ["2022/01/15-my-first-post.md", "15日"],
-            //     ["2022/01/15-test-daily.md", "15日"],
-            //   ],
-            // },
+            {
+              title: "2月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2022/02/04-winter-olympic-games.md", "04日"],
+                ["2022/02/04-bugler.md", "04日"],
+                ["2022/02/04-commentary.md", "04日"],
+                ["2022/02/07-meet-best-friend.md", "07日"],
+                ["2022/02/07-waiting-flight.md", "07日"],
+                ["2022/02/07-boarding.md", "07日"],
+                ["2022/02/08-summarize-the-trip.md", "08日"],
+                ["2022/02/08-career-planning.md", "08日"],
+                ["2022/02/08-start-working.md", "08日"],
+              ],
+            },
           ],
         },
         // {
@@ -149,7 +156,7 @@ module.exports = {
         //       sidebarDepth: 1,
         //       children: [
         //         ["2022/01/15-my-first-post.md", "15-第一文章"],
-        //         ["2022/01/15-test-daily.md", "15-测试文章"],
+        //         ["2022/01/15-test-moment.md", "15-测试文章"],
         //       ],
         //     },
         //   ],
