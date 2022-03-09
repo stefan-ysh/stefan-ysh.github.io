@@ -142,6 +142,7 @@ module.exports = {
                 ["2022/02/08-career-planning.md", "08日"],
                 ["2022/02/08-start-working.md", "08日"],
                 ["2022/02/13-the-way-to-speak.md", "13日"],
+                ["2022/02/21-guangzhou-is-so-cold.md", "21日"],
               ],
             },
           ],
