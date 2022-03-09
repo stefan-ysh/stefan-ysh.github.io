@@ -89,12 +89,12 @@ module.exports = {
           sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
           children: [["personal-info/introduce.md", "关于我"]],
         },
-        {
-          title: "其他",
-          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
-          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-          children: [["personal-info/introduce.md", "关于我"]],
-        },
+        // {
+        //   title: "其他",
+        //   collapsable: true, // false为默认展开菜单, 默认值true是折叠,
+        //   sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
+        //   children: [["personal-info/introduce.md", "关于我"]],
+        // },
       ],
       "/pages/learn/": [
         {
@@ -143,6 +143,7 @@ module.exports = {
                 ["2022/02/08-start-working.md", "08日"],
                 ["2022/02/13-the-way-to-speak.md", "13日"],
                 ["2022/02/21-guangzhou-is-so-cold.md", "21日"],
+                ["2022/02/23-the-world-should-not-be-like-this.md", "23日"],
               ],
             },
           ],
