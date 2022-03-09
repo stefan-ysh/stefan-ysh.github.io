@@ -144,6 +144,7 @@ module.exports = {
                 ["2022/02/13-the-way-to-speak.md", "13日"],
                 ["2022/02/21-guangzhou-is-so-cold.md", "21日"],
                 ["2022/02/23-the-world-should-not-be-like-this.md", "23日"],
+                ["2022/02/23-last-words-in-a-dream.md", "23日"],
               ],
             },
           ],
