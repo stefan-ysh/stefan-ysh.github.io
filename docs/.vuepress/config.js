@@ -148,6 +148,14 @@ module.exports = {
                 ["2022/02/27-thanks-my-bro.md", "27日"],
               ],
             },
+            {
+              title: "3月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2022/03/04-generate-electricity-with-love.md", "04日"],
+              ],
+            },
           ],
         },
         // {
