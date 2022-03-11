@@ -154,6 +154,7 @@ module.exports = {
               sidebarDepth: 1,
               children: [
                 ["2022/03/04-generate-electricity-with-love.md", "04日"],
+                ["2022/03/06-swimming.md", "06日"],
               ],
             },
           ],
