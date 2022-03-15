@@ -74,7 +74,7 @@ module.exports = {
       { text: "说说", link: "/pages/moment/", icon: "reco-suggestion" },
       { text: "分享", link: "/pages/share/", icon: "reco-three" },
       { text: "TimeLine", link: "/timeline/", icon: "reco-date" },
-      { text: "简介", link: "/pages/me/index.md", icon: "reco-document" },
+      { text: "简介", link: "/pages/me/personal-info/introduce.md", icon: "reco-document" },
       {
         text: "Github",
         link: "https://github.com/stefan-ysh",
@@ -82,20 +82,6 @@ module.exports = {
       },
     ],
     sidebar: {
-      "/pages/me/": [
-        {
-          title: "自我介绍",
-          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
-          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-          children: [["personal-info/introduce.md", "关于我"]],
-        },
-        // {
-        //   title: "其他",
-        //   collapsable: true, // false为默认展开菜单, 默认值true是折叠,
-        //   sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-        //   children: [["personal-info/introduce.md", "关于我"]],
-        // },
-      ],
       "/pages/learn/": [
         {
           title: "html",
