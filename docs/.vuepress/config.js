@@ -31,17 +31,17 @@ module.exports = {
     ],
   ],
   plugins: [
-    [
-      "@vuepress/last-updated",
-      {
-        transformer: (timestamp) => {
-          // 不要忘了安装 moment
-          const moment = require("moment");
-          moment.locale("zh-cn");
-          return moment(timestamp).format("LLLL");
-        },
-      },
-    ],
+    // [
+    //   "@vuepress/last-updated",
+    //   {
+    //     transformer: (timestamp) => {
+    //       // 不要忘了安装 moment
+    //       const moment = require("moment");
+    //       moment.locale("zh-cn");
+    //       return moment(timestamp).format("LLLL");
+    //     },
+    //   },
+    // ],
     ["image", {}],
     // ['@vuepress/back-to-top']
   ],
@@ -49,7 +49,7 @@ module.exports = {
     type: "blog", //reco 主题类
     author: "苑帅",
     authorAvatar: "/avatar.jpeg", //reco 右侧头像
-    lastUpdated: "更新时间",
+    // lastUpdated: "lastUpdated",
     logo: "/avatar.jpeg",
     nav: [
       { text: "Home", link: "/", icon: "reco-home" },
@@ -141,6 +141,7 @@ module.exports = {
               children: [
                 ["2022/03/04-generate-electricity-with-love.md", "04日"],
                 ["2022/03/06-swimming.md", "06日"],
+                ["2022/03/06-have-a-baby-quickly.md", "06日"],
               ],
             },
           ],

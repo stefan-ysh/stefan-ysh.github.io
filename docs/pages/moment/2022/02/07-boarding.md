@@ -5,6 +5,7 @@ categories:
   - 在路上
 tags:
   - 说说
+isShowComments: false
 ---
 
 <img src='/monment/2022/02/07/2.png'  align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>

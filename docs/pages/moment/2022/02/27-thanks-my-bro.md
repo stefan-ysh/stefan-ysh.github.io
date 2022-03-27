@@ -5,6 +5,8 @@ categories:
   - 老友记
 tags:
   - 说说
+
+isShowComments: false
 ---
 
 <img src='/monment/2022/02/27/1.png'  align='center' style='width:50%;height:100%;box-shadow:1px 1px 5px pink;'/>

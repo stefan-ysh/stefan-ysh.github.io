@@ -5,6 +5,7 @@ categories:
   - 苑言
 tags:
   - 说说
+isShowComments: false
 ---
 
 我一个东北人在广州竟然穿着棉裤，感觉同时侮辱了东北、广州和棉裤。
