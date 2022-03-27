@@ -109,8 +109,10 @@ module.exports = {
               // 将其设置为 0 将禁用标题链接，最大值为2，同时提取 h2 和 h3 标题。
               sidebarDepth: 1,
               children: [
+                ["2022/01/14-jay-chou-come-to-me-home.md", "14日"],
                 ["2022/01/15-my-first-post.md", "15日"],
-                ["2022/01/15-test-moment.md", "15日"],
+                ["2022/01/23-back-to-jilin.md", "23日"],
+                ["2022/01/24-de-biao-fan.md", "24日"],
               ],
             },
             {
@@ -142,6 +144,7 @@ module.exports = {
                 ["2022/03/04-generate-electricity-with-love.md", "04日"],
                 ["2022/03/06-swimming.md", "06日"],
                 ["2022/03/06-have-a-baby-quickly.md", "06日"],
+                ["2022/03/07-disappeared-programmer.md", "07日"],
               ],
             },
           ],
