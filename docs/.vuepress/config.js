@@ -102,7 +102,7 @@ module.exports = {
       ],
       "/pages/moment/": [
         {
-          title: "2021",
+          title: "2021年",
           collapsable: true,
           sidebarDepth: 1,
           children: [
@@ -173,6 +173,7 @@ module.exports = {
                 ["2022/03/06-swimming.md", "06日"],
                 ["2022/03/06-have-a-baby-quickly.md", "06日"],
                 ["2022/03/07-disappeared-programmer.md", "07日"],
+                ["2022/03/30-query-paper-repetition-rate.md", "30日"],
               ],
             },
           ],
