@@ -74,7 +74,11 @@ module.exports = {
       { text: "说说", link: "/pages/moment/", icon: "reco-suggestion" },
       { text: "分享", link: "/pages/share/", icon: "reco-three" },
       { text: "TimeLine", link: "/timeline/", icon: "reco-date" },
-      { text: "简介", link: "/pages/me/personal-info/introduce.md", icon: "reco-document" },
+      {
+        text: "简介",
+        link: "/pages/me/personal-info/introduce.md",
+        icon: "reco-document",
+      },
       {
         text: "Github",
         link: "https://github.com/stefan-ysh",
@@ -97,6 +101,30 @@ module.exports = {
         },
       ],
       "/pages/moment/": [
+        {
+          title: "2021",
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            {
+              title: "8月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2021/08/29-mother-killing-case.md", "29日"],
+              ],
+            },
+            {
+              title: "9月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2021/09/07-smart-comment.md", "7日"],
+                ["2021/09/07-new-wallpaper.md", "7日"],
+              ],
+            },
+          ],
+        },
         {
           title: "2022年",
           collapsable: true,
@@ -149,22 +177,6 @@ module.exports = {
             },
           ],
         },
-        // {
-        //   title: "2022",
-        //   collapsable: true,
-        //   sidebarDepth: 1,
-        //   children: [
-        //     {
-        //       title: "01",
-        //       collapsable: true,
-        //       sidebarDepth: 1,
-        //       children: [
-        //         ["2022/01/15-my-first-post.md", "15-第一文章"],
-        //         ["2022/01/15-test-moment.md", "15-测试文章"],
-        //       ],
-        //     },
-        //   ],
-        // },
       ],
       "/pages/share/": [
         {
@@ -206,7 +218,7 @@ module.exports = {
             ["other/how-to-copy-in-csdn.md", "csdn免登陆破解"],
             ["other/cascade-select-cleanup.md", "级联选择清除"],
             ["other/register-vue-component.md", "全局注册vue组件"],
-            ["other/generate-directory-tree.md", "js代码生成结构树"]
+            ["other/generate-directory-tree.md", "js代码生成结构树"],
           ],
         },
       ],
