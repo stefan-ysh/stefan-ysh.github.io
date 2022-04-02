@@ -220,6 +220,7 @@ module.exports = {
             ["other/cascade-select-cleanup.md", "级联选择清除"],
             ["other/register-vue-component.md", "全局注册vue组件"],
             ["other/generate-directory-tree.md", "js代码生成结构树"],
+            ["other/vue-mobile-org.md", "移动端组织选人组件"],
           ],
         },
       ],
