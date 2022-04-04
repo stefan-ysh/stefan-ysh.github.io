@@ -138,7 +138,6 @@ module.exports = {
               sidebarDepth: 1,
               children: [
                 ["2022/01/14-jay-chou-come-to-me-home.md", "14日"],
-                ["2022/01/15-my-first-post.md", "15日"],
                 ["2022/01/23-back-to-jilin.md", "23日"],
                 ["2022/01/24-de-biao-fan.md", "24日"],
               ],
