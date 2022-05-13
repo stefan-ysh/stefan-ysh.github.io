@@ -91,7 +91,10 @@ module.exports = {
           title: "html",
           collapsable: true, // false为默认展开菜单, 默认值true是折叠,
           sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-          children: [["html/first.md", "初识html"]],
+          children: [
+            ["html/description.md", "简介"],
+            ["html/html-editors.md", "HTML 编辑器"],
+        ],
         },
         {
           title: "CSS",
@@ -110,9 +113,7 @@ module.exports = {
               title: "8月",
               collapsable: true,
               sidebarDepth: 1,
-              children: [
-                ["2021/08/29-mother-killing-case.md", "29日"],
-              ],
+              children: [["2021/08/29-mother-killing-case.md", "29日"]],
             },
             {
               title: "9月",

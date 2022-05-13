@@ -10,4 +10,4 @@ keys:
 isShowComments: false
 ---
 
-这是我的学习笔记
+主要记录日常学习的一些笔记。
