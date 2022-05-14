@@ -1,5 +1,9 @@
 // const valineConf = require("./valineConf/index.js");
 module.exports = {
+  // 解决 vuepress 引入 element-ui 时，报 core-js 错的问题
+  chainWebpack: (config) => {
+    config.resolve.alias.set("core-js/library/fn", "core-js/features");
+  },
   //reco 主题
   theme: "reco",
   // 博客配置
@@ -201,7 +205,12 @@ module.exports = {
               title: "Javascript",
               collapsable: true,
               sidebarDepth: 1,
-              children: [["javascript/data-type.md", "数据类型"]],
+              children: [
+                [
+                  "javascript/input-chinese.md",
+                  "拼音输入过程频繁触发请求问题",
+                ],
+              ],
             },
           ],
         },
