@@ -25,5 +25,7 @@
     "vuepress": "^1.5.1",
     "vuepress-theme-reco": "^1.4.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "element-ui": "^2.15.8"
+  }
 }
