@@ -124,10 +124,13 @@ document.addEventListener("copy", function(e) {
 
 1. 将下列代码复制
 
-```javascript
+<!-- 无破解`关注后才可查看全部内容` -->
+<!-- ```javascript
 javascript:document.addEventListener('copy',function(e){e.preventDefault();var textArr=window.getSelection().toString().split('\t');var pasteText='';textArr.forEach(function(e){pasteText+=e;});e.clipboardData.setData('text',pasteText);console.log('Clipboard has been purged successfully,the content is as follows：\n\n'+pasteText)});var preElement=document.getElementsByTagName('pre');var codeElement=document.getElementsByTagName('code');console.clear();console.log(`%c ${preElement.length} pre element${preElement.length>1?'s':''} and ${codeElement.length} code element${codeElement.length>1?'s':''} were found in total.`,"color:red;font-weight:bold;font-size:15px;");console.time("Elapsed time: ");for(let i=0;i<=preElement.length-1;i++){preElement[i].style.userSelect='text';console.log(`%c ${i+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");}for(let i=0;i<=codeElement.length-1;i++){codeElement[i].style.userSelect='text';console.log(`%c ${i+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");}console.timeEnd("Elapsed time: ");
+``` -->
+```javascript
+javascript:document.getElementById("article_content").style.height="100%",document.getElementsByClassName("hide-article-box")[0].style.display="none",document.addEventListener("copy",function(e){e.preventDefault();var t=window.getSelection().toString().split("\t"),l="";t.forEach(function(e){l+=e}),e.clipboardData.setData("text",l),console.log("Clipboard has been purged successfully,the content is as follows：\n\n"+l)});var preElement=document.getElementsByTagName("pre"),codeElement=document.getElementsByTagName("code");console.clear(),console.log(`%c ${preElement.length} pre element${preElement.length>1?"s":""} and ${codeElement.length} code element${codeElement.length>1?"s":""} were found in total.`,"color:red;font-weight:bold;font-size:15px;"),console.time("Elapsed time: ");for(let e=0;e<=preElement.length-1;e++)preElement[e].style.userSelect="text",console.log(`%c ${e+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");for(let e=0;e<=codeElement.length-1;e++)codeElement[e].style.userSelect="text",console.log(`%c ${e+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");console.timeEnd("Elapsed time: ");
 ```
-
 2. 在浏览器中创建一个书签
 
 <img src='/share/other/how-to-copy-in-csdn/4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
