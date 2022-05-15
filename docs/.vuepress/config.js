@@ -156,15 +156,16 @@ module.exports = {
       // container	string || HTMLElementobject	null	视图端口以显示放大
       // template	string|HTMLTemplateElement	null	缩放时显示的模板元素
       //图片放大插件 先安装在配置， npm install vuepress-plugin-dynamic-title --save
-      '@vuepress/plugin-medium-zoom', {
-        selector: '.page img',
+      "@vuepress/plugin-medium-zoom",
+      {
+        selector: ".page img",
         delay: 1000,
         options: {
           margin: 24,
-          background: 'rgba(25,18,25,0.9)',
-          scrollOffset: 40
-        }
-      }
+          background: "rgba(25,18,25,0.9)",
+          scrollOffset: 40,
+        },
+      },
     ],
     [
       "vuepress-plugin-nuggets-style-copy",
@@ -327,7 +328,12 @@ module.exports = {
               title: "CSS",
               collapsable: true,
               sidebarDepth: 1,
-              children: [["css/selector.md", "选择器"]],
+              children: [
+                [
+                  "css/tooltip-by-html&css.md",
+                  "纯 html + css 实现 UI 框架的 tooltip 效果",
+                ],
+              ],
             },
             {
               title: "Javascript",
