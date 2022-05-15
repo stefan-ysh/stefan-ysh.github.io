@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { Message } from "element-ui";
 export default {
   name: "input-request",
   data() {
@@ -26,10 +27,10 @@ export default {
 
   methods: {
     onInput(e) {
-      this.$message.info(`触发了请求`);
+      Message.info('触发了请求');
     },
     onEnter(e) {
-      this.$message.info(`触发了请求`);
+      Message.info('触发了请求');
     },
   },
 };

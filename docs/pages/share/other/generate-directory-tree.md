@@ -1,6 +1,7 @@
 ---
 title: 利用js代码生成目录结构树
 date: 2022-01-19
+sticky: 1
 categories:
 tags:
   - node

@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { Message } from "element-ui";
 export default {
   name: "selected-request",
   data() {
@@ -31,15 +32,15 @@ export default {
       if (this.flag) {
         return;
       }
-      this.$message.info(`触发了请求`);
+      Message.info('触发了请求');
     },
     onCompositionStart(e) {
       this.flag = true;
-      this.$message.info(`输入中...`);
+      Message.info('输入中...');
     },
     onCompositionEnd(e) {
       this.flag = false;
-      this.$message.info(`输入结束`);
+      Message.info('输入结束');
     },
   },
 };

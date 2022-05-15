@@ -2,6 +2,7 @@
 title: vue 一次性全局注册自定义组件
 date: 2022-03-08
 categories:
+sticky: 1
 tags:
   - vue
 # publish: true

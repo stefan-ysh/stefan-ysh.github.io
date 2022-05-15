@@ -2,6 +2,7 @@
 title: 移动端组织选人组件
 date: 2022-04-02 21:06:00
 categories:
+sticky: 1
 tags:
   - vue
 # publish: true

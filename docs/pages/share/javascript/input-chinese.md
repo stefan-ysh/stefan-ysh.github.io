@@ -2,6 +2,7 @@
 title: 拼音输入过程频繁触发 input 事件的问题解决
 date: 2022-05-15
 categories:
+sticky: 1
 tags:
   - javascript
 # publish: true
