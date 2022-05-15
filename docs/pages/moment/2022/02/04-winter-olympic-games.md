@@ -7,6 +7,6 @@ tags:
   - 说说
 isShowComments: false
 ---
-<img src='/monment/2022/02/04/1.png'  align='center' style='width:50%;height:50%;box-shadow:1px 1px 5px pink;'/>
+<img src='/moment/2022/02/04/1.png'  align='center' style='width:50%;height:50%;box-shadow:1px 1px 5px pink;'/>
 
 有个骑脖梗儿的哈哈哈哈哈哈好可爱，掌握了特写密码。

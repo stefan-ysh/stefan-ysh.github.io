@@ -309,6 +309,14 @@ module.exports = {
                 ["2022/03/30-query-paper-repetition-rate.md", "30日"],
               ],
             },
+            {
+              title: "5月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2022/05/07.md", "07日"],
+              ],
+            },
           ],
         },
       ],
