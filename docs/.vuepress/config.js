@@ -310,11 +310,25 @@ module.exports = {
               ],
             },
             {
+              title: "4月",
+              collapsable: true,
+              sidebarDepth: 1,
+              children: [
+                ["2022/04/01.md", "01日"],
+                ["2022/04/05.md", "05日"],
+                ["2022/04/21.md", "21日"],
+                ["2022/04/23.md", "23日"],
+              ],
+            },
+            {
               title: "5月",
               collapsable: true,
               sidebarDepth: 1,
               children: [
+                ["2022/05/03.md", "03日"],
                 ["2022/05/07.md", "07日"],
+                ["2022/05/09.md", "09日"],
+                ["2022/05/10.md", "10日"],
               ],
             },
           ],
