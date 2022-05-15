@@ -136,6 +136,17 @@ module.exports = {
     //   },
     // ],
     ["image", {}],
+    // [
+    //   //动态标题 先安装在配置， npm install vuepress-plugin-dynamic-title --save
+    //   "dynamic-title",
+    //   {
+    //     showIcon: "/favicon.ico",
+    //     showText: "(/≧▽≦/)咦！又好了！",
+    //     hideIcon: "/failure.ico",
+    //     hideText: "(●—●)喔哟，崩溃啦！",
+    //     recoverTime: 2000
+    //   }
+    // ],
     // ['@vuepress/back-to-top']
   ],
   themeConfig: {

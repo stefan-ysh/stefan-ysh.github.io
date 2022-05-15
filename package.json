@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "element-ui": "^2.15.8",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
     "vuepress-plugin-meting": "^0.3.1"
   }
 }
