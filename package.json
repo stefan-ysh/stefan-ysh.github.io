@@ -26,6 +26,7 @@
     "vuepress-theme-reco": "^1.4.6"
   },
   "dependencies": {
-    "element-ui": "^2.15.8"
+    "element-ui": "^2.15.8",
+    "vuepress-plugin-meting": "^0.3.1"
   }
 }
