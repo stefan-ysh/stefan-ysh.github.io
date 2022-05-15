@@ -331,7 +331,7 @@ module.exports = {
               children: [
                 [
                   "css/tooltip-by-html&css.md",
-                  "纯 html + css 实现 UI 框架的 tooltip 效果",
+                  "html + css实现UI框架 tooltip 效果",
                 ],
               ],
             },
