@@ -147,7 +147,14 @@ module.exports = {
     //     recoverTime: 2000
     //   }
     // ],
+
     [
+      //  属性	类型	默认值	描述
+      // margin	number	0	放大图像外的空间
+      // background	string	#fff	叠加的背景
+      // scrollOffset	number	40	要滚动以关闭缩放的像素数
+      // container	string || HTMLElementobject	null	视图端口以显示放大
+      // template	string|HTMLTemplateElement	null	缩放时显示的模板元素
       //图片放大插件 先安装在配置， npm install vuepress-plugin-dynamic-title --save
       '@vuepress/plugin-medium-zoom', {
         selector: '.page img',
@@ -158,6 +165,15 @@ module.exports = {
           scrollOffset: 40
         }
       }
+    ],
+    [
+      "vuepress-plugin-nuggets-style-copy",
+      {
+        copyText: "复制代码",
+        tip: {
+          content: "复制成功",
+        },
+      },
     ],
     // ['@vuepress/back-to-top']
   ],
