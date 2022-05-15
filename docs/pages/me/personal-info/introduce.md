@@ -2,6 +2,7 @@
 title: yeah,I'm here.
 date: 2022-03-09 23:46:43
 categories:
+sticky: 1
   - 苑帅
 tags:
   - 简介
