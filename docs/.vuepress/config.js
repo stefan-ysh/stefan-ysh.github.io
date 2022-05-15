@@ -147,6 +147,18 @@ module.exports = {
     //     recoverTime: 2000
     //   }
     // ],
+    [
+      //图片放大插件 先安装在配置， npm install vuepress-plugin-dynamic-title --save
+      '@vuepress/plugin-medium-zoom', {
+        selector: '.page img',
+        delay: 1000,
+        options: {
+          margin: 24,
+          background: 'rgba(25,18,25,0.9)',
+          scrollOffset: 40
+        }
+      }
+    ],
     // ['@vuepress/back-to-top']
   ],
   themeConfig: {
