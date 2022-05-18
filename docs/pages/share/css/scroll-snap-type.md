@@ -110,9 +110,9 @@ css 的 scroll-snap-type 属性：
 
 - 为子元素添加 `scroll-snap-align` 属性可控制其滚动后显示位置
 
-  - `scroll-snap-align: start;` 可使其滚动后以开始边对齐
+  - `scroll-snap-align: start;` 可使其滚动后以开始边对齐，如从左往右滑，则靠左，从上往下滑，则靠上
   - `scroll-snap-align: center;` 可使其滚动后居中显示
-  - `scroll-snap-align: end;` 可使其滚动后居中显示
+  - `scroll-snap-align: end;` 可使其滚动后靠结束边对齐，如从左往右滑，则靠右，从上往下滑，则靠下
 
 <html>
   <style>
