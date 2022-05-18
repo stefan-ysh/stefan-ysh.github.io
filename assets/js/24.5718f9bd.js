@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{680:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("冬奥会开幕式这个小男孩虽然只吹了一会儿，但他的父母可以吹一辈子。")])])}),[],!1,null,null,null);e.default=l.exports}}]);

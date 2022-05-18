@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[44],{701:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("最衷心的愿望往往只需要最朴素的表达方式，比如我爸给我爷上坟时候只会说：保佑你孙子发大财！ ​​​")])])}),[],!1,null,null,null);e.default=l.exports}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[50],{712:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("是否提供辣椒油是判断一个兰州拉面馆正宗与否的重要标准。")])])}),[],!1,null,null,null);e.default=l.exports}}]);

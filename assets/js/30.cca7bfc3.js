@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{685:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("我可太愿意收拾屋子了，我宣布，职业规划向家政倾斜，钦此。")])])}),[],!1,null,null,null);e.default=l.exports}}]);

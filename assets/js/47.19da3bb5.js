@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[47],{706:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("今天被一个小男孩问厕所在哪，他叫我帅哥，那一瞬间我甚至都想把书包打开给他当尿壶。")])])}),[],!1,null,null,null);e.default=l.exports}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{675:function(t,e,n){"use strict";n.r(e);var s=n(11),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("吴谢宇给他妈妈尸体包了70多层，我在想，有没有在包其中一层的时候想到小时候妈妈也是用被子包着他的。")])])}),[],!1,null,null,null);e.default=l.exports}}]);
