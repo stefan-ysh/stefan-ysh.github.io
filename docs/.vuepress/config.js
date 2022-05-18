@@ -355,6 +355,10 @@ module.exports = {
                   "css/tooltip-by-html&css.md",
                   "html + css实现UI框架 tooltip 效果",
                 ],
+                [
+                  "css/scroll-snap-type.md",
+                  "巧用 css 制作抖音划视频效果",
+                ],
               ],
             },
             {
