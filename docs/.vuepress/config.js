@@ -355,16 +355,12 @@ module.exports = {
                   "css/tooltip-by-html&css.md",
                   "html + css实现UI框架 tooltip 效果",
                 ],
-                [
-                  "css/scroll-snap-type.md",
-                  "巧用 css 制作抖音划视频效果",
-                ],
+                ["css/scroll-snap-type.md", "巧用 css 制作抖音划视频效果"],
               ],
             },
             {
               title: "Javascript",
               collapsable: true,
-              sidebarDepth: 1,
               children: [
                 ["javascript/input-chinese.md", "拼音输入过程频繁触发请求问题"],
               ],
@@ -387,6 +383,7 @@ module.exports = {
             ["other/register-vue-component.md", "全局注册vue组件"],
             ["other/generate-directory-tree.md", "js代码生成结构树"],
             ["other/vue-mobile-org.md", "移动端组织选人组件"],
+            ["pinia.md", "Pinia"],
           ],
         },
       ],
