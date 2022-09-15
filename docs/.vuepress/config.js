@@ -386,6 +386,17 @@ module.exports = {
             ["pinia.md", "Pinia"],
           ],
         },
+        {
+          title: "成功他妈",
+          collapsable: false,
+          sidebarDepth: 1,
+          children: [
+            [
+              "mother-of-success/electron-builder-cant-find-python.md",
+              "electron-builder 找不到 python",
+            ],
+          ],
+        },
       ],
       "/pages/reading-notes/": [
         {
