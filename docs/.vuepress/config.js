@@ -235,6 +235,21 @@ module.exports = {
           sidebarDepth: 1,
           children: [["css/first.md", "初识css"]],
         },
+        {
+          title: "Javascript",
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [],
+        },
+        {
+          title: "Vue3",
+          collapsable: true,
+          sidebarDepth: 1,
+          children: [
+            ["vue3/ref.md", "ref"],
+            ["vue3/watch.md", "watch 监听器"],
+          ],
+        },
       ],
       "/pages/moment/": [
         {
