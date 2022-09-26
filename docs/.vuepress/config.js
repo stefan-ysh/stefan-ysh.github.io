@@ -1,636 +1,240 @@
-// const valineConf = require("./valineConf/index.js");
+const htmlModules = require("./config/htmlModules.js");
+
 module.exports = {
-  // 解决 vuepress 引入 element-ui 时，报 core-js 错的问题
-  chainWebpack: (config) => {
-    config.resolve.alias.set("core-js/library/fn", "core-js/features");
-  },
-  //reco 主题
-  theme: "reco",
-  // 博客配置
-  blogConfig: {
-    category: {
-      location: 2, // 在导航栏菜单中所占的位置，默认2
-      text: "Category", // 默认文案 “分类”
+  theme: "vdoing", // 使用npm包主题
+  // theme: require.resolve('../../theme-vdoing'), // 使用本地主题
+
+  title: "Ysh Blog",
+  description: "我的个人博客",
+  // base: '/', // 默认'/'。如果你想将你的网站部署到 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+
+  // 主题配置
+  themeConfig: {
+    // 导航配置
+    nav: [
+      { text: "首页", link: "/" },
+      { text: "分类", link: "/categories/" },
+      { text: "归档", link: "/archives/" },
+    ],
+    sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
+    repo: "stefan-ysh/stefan-ysh.github.io", // 导航栏右侧生成Github链接
+    searchMaxSuggestions: 10, // 搜索结果显示最大数
+    lastUpdated: "上次更新", // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
+    docsDir: "docs", // 编辑的文件夹
+    editLinks: true, // 启用编辑
+    editLinkText: "编辑",
+
+    //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
+
+    // category: false, // 是否打开分类功能，默认true
+    tag: false, // 是否打开标签功能，默认true
+    // archive: false, // 是否打开归档功能，默认true
+    // categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
+
+    // bodyBgImg: [
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
+    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
+    // ], // body背景大图，默认无。 单张图片 String | 多张图片 Array, 多张图片时每隔15秒换一张。
+    // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
+
+    // titleBadge: false, // 文章标题前的图标是否显示，默认true
+    // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
+    //   '图标地址1',
+    //   '图标地址2'
+    // ],
+    // contentBgStyle: 1, // 文章内容块的背景风格，默认无. 1 方格 | 2 横线 | 3 竖线 | 4 左斜线 | 5 右斜线 | 6 点状
+
+    // updateBar: { // 最近更新栏
+    //   showToArticle: false, // 显示到文章页底部，默认true
+    //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+    // },
+    // rightMenuBar: false, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
+    // sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
+    // pageButton: false, // 是否显示快捷翻页按钮，默认true
+
+    // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
+    sidebar: "structuring",
+
+    // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, link: String}
+    author: {
+      name: "ysh", // 必需
+      link: "https://github.com/stefan-ysh", // 可选的
     },
-    tag: {
-      location: 3, // 在导航栏菜单中所占的位置，默认3
-      text: "Tag", // 默认文案 “标签”
+
+    // 博主信息，显示在首页侧边栏
+    blogger: {
+      avatar: "img/me.jpg",
+      name: "ysh",
+      slogan: "Elegance never goes out of style",
     },
+
+    // 社交图标，显示于博主信息栏和页脚栏
+    social: {
+      // iconfontCssFile: '//at.alicdn.com/t/font_1678482_u4nrnp8xp6g.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加
+      icons: [
+        {
+          iconClass: "icon-youjian",
+          title: "邮箱",
+          link: "mailto:stafen_ysh@foxmail.com",
+        },
+        {
+          iconClass: "icon-github",
+          title: "GitHub",
+          link: "https://github.com/stefan-ysh",
+        },
+        {
+          iconClass: "icon-weibo",
+          title: "微博",
+          link: "https://weibo.com/u/5514452828",
+        },
+      ],
+    },
+
+    // 页脚信息
+    footer: {
+      createYear: 2022, // 博客创建年份
+      copyrightInfo:
+        'Ysh | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息，支持a标签
+    },
+
+    // 插入hmtl(广告)模块
+    //htmlModules
   },
-  //reco 主题
-  base: "/",
-  title: "Stefan Blog",
-  description: "A quiet place for me.",
+
+  // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ["link", { rel: "icon", href: "avatar.jpeg" }],
-    ["link", { rel: "stylesheet", href: "/moment/font.css" }],
-    ["meta", { name: "author", content: "苑帅" }],
-    ["meta", { name: "keywords", content: "苑帅 vuepress 前端 记录 笔记" }],
+    ["link", { rel: "icon", href: "/img/favicon.ico" }], //favicons，资源放在public文件夹
     [
       "meta",
       {
-        name: "viewport",
-        content: "width=device-width,initial-scale=1,user-scalable=no",
+        name: "keywords",
+        content:
+          "后端博客,个人技术博客,后端,后端开发,后端框架,web后端,后端面试题,技术文档,学习,面试,源码，感悟，Java,Pythn,git,github,markdown",
       },
     ],
+    ["meta", { name: "baidu-site-verification", content: "7F55weZDDc" }], // 百度统计的站长验证（你可以去掉）
+    ["meta", { name: "theme-color", content: "#11a8cd" }], // 移动浏览器主题颜色
+    [
+      "script",
+      {
+        "data-ad-client": "ca-pub-7828333725993554",
+        async: "async",
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+      },
+    ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
+
+  // 插件配置
   plugins: [
-    // [
-    //   //先安装在配置， npm install @vuepress-plugin-meting --save
-    //   "meting",
-    //   {
-    //     meting: {
-    //       server: "netease",
-    //       type: "playlist",
-    //       mid: "5059661515",
-    //     },
-    //     aplayer: {
-    //       lrcType: 0,
-    //       preload: "metadata",
-    //       order: "random",
-    //       mini: true,
-    //       theme: "#000000",
-    //     },
-    //   },
-    //   // fixed
-    //   // 类型：boolean
-    //   // 默认值： false
-    //   // 描述：是否开启吸底模式
+    // 本地插件（供学习）
+    // [require('./plugins/love-me'), { // 鼠标点击爱心特效
+    //   color: '#11a8cd', // 爱心颜色，默认随机色
+    //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
+    // }],
 
-    //   // mini
-    //   // 类型：boolean
-    //   // 默认值： false
-    //   // 描述：是否开启迷你模式
+    "vuepress-plugin-baidu-autopush", // 百度自动推送
 
-    //   // autoplay
-    //   // 类型：boolean
-    //   // 默认值： false
-    //   // 描述：是否开启自动播放
-
-    //   // theme
-    //   // 类型： string
-    //   // 默认值： #b7daff
-    //   // 描述：设置播放器默认主题颜色
-
-    //   // loop
-    //   // 类型：APlayer.LoopMode
-    //   // 默认值： all
-    //   // 描述：设置播放器的初始循环模式
-    //   // 可选值：'all' | 'one' | 'none'
-
-    //   // order
-    //   // 类型：APlayer.OrderMode
-    //   // 默认值： list
-    //   // 描述：设置播放器的初始顺序模式
-    //   // 可选值： 'list' | 'random'
-
-    //   // preload
-    //   // 类型：APlayer.Preload
-    //   // 默认值： auto
-    //   // 描述：设置音频的预加载模式
-    //   // 可选值：'none' | 'metadata' | 'auto'
-
-    //   // volume
-    //   // 类型：number
-    //   // 默认值： 0.7
-    //   // 描述：设置播放器的音量
-    //   // audio（见 vue-aplayer 文档）
-
-    //   // customAudioType（见 vue-aplayer 文档）
-
-    //   // mutex
-    //   // 类型：boolean
-    //   // 默认值： true
-    //   // 描述：是否开启互斥模式
-
-    //   // lrcType
-    //   // 类型：APlayer.LrcType?
-    //   // 默认值： 0
-    //   // 描述：设置 lrc 歌词解析模式
-    //   // 可选值： 3 | 1 | 0（0：禁用 lrc 歌词，1：lrc 格式的字符串，3：lrc 文件 url）
-
-    //   // listFolded
-    //   // 类型：boolean
-    //   // 默认值： false
-    //   // 描述：是否折叠播放列表
-
-    //   // listMaxHeight
-    //   // 类型：number
-    //   // 默认值： 250
-    //   // 描述：设置播放列表最大高度，单位为像素
-
-    //   // storageName
-    //   // 类型：string
-    //   // 默认值： vuepress-plugin-meting
-    //   // 描述：设置存储播放器设置的 localStorage key
-    // ],
-    // [
-    //   "@vuepress/last-updated",
-    //   {
-    //     transformer: (timestamp) => {
-    //       // 不要忘了安装 moment
-    //       const moment = require("moment");
-    //       moment.locale("zh-cn");
-    //       return moment(timestamp).format("LLLL");
-    //     },
-    //   },
-    // ],
-    ["image", {}],
-    // [
-    //   //动态标题 先安装在配置， npm install vuepress-plugin-dynamic-title --save
-    //   "dynamic-title",
-    //   {
-    //     showIcon: "/favicon.ico",
-    //     showText: "(/≧▽≦/)咦！又好了！",
-    //     hideIcon: "/failure.ico",
-    //     hideText: "(●—●)喔哟，崩溃啦！",
-    //     recoverTime: 2000
-    //   }
-    // ],
-
+    // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
     [
-      //  属性	类型	默认值	描述
-      // margin	number	0	放大图像外的空间
-      // background	string	#fff	叠加的背景
-      // scrollOffset	number	40	要滚动以关闭缩放的像素数
-      // container	string || HTMLElementobject	null	视图端口以显示放大
-      // template	string|HTMLTemplateElement	null	缩放时显示的模板元素
-      //图片放大插件 先安装在配置， npm install vuepress-plugin-dynamic-title --save
-      "@vuepress/plugin-medium-zoom",
+      "thirdparty-search",
       {
-        selector: ".page img",
-        delay: 1000,
-        options: {
-          margin: 24,
-          background: "rgba(25,18,25,0.9)",
-          scrollOffset: 40,
-        },
-      },
-    ],
-    [
-      "vuepress-plugin-nuggets-style-copy",
-      {
-        copyText: "复制代码",
-        tip: {
-          content: "复制成功",
-        },
-      },
-    ],
-    // ['@vuepress/back-to-top']
-  ],
-  themeConfig: {
-    type: "blog", //reco 主题类
-    author: "苑帅",
-    authorAvatar: "/avatar.jpeg", //reco 右侧头像
-    // lastUpdated: "lastUpdated",
-    logo: "/avatar.jpeg",
-    nav: [
-      { text: "Home", link: "/", icon: "reco-home" },
-      // { text: "文章", link: "/pages/learn/", icon: "reco-suggestion" },
-      {
-        text: "笔记",
-        ariaLabel: "笔记",
-        icon: "reco-suggestion",
-        items: [
+        thirdparty: [
+          // 可选，默认 []
           {
-            text: "读书",
-            link: "/pages/reading-notes/",
-            icon: "reco-faq",
+            title: "在MDN中搜索",
+            frontUrl: "https://developer.mozilla.org/zh-CN/search?q=", // 搜索链接的前面部分
+            behindUrl: "", // 搜索链接的后面部分，可选，默认 ''
           },
           {
-            text: "学习",
-            link: "/pages/learn/",
-            icon: "reco-document",
+            title: "在Runoob中搜索",
+            frontUrl: "https://www.runoob.com/?s=",
+          },
+          // {
+          //   title: "在Vue API中搜索",
+          //   frontUrl: "https://cn.vuejs.org/v2/api/#",
+          // },
+          {
+            title: "在Bing中搜索",
+            frontUrl: "https://cn.bing.com/search?q=",
+          },
+          {
+            title: "通过百度搜索本站的",
+            frontUrl: "https://www.baidu.com/s?wd=site%3Axugaoyi.com%20",
           },
         ],
       },
-      { text: "说说", link: "/pages/moment/", icon: "reco-suggestion" },
-      { text: "分享", link: "/pages/share/", icon: "reco-three" },
-      { text: "TimeLine", link: "/timeline/", icon: "reco-date" },
+    ],
+
+    [
+      "one-click-copy", // 代码块复制按钮
       {
-        text: "简介",
-        link: "/pages/me/personal-info/introduce.md",
-        icon: "reco-document",
-      },
-      {
-        text: "Github",
-        link: "https://github.com/stefan-ysh",
-        icon: "reco-github",
+        copySelector: [
+          'div[class*="language-"] pre',
+          'div[class*="aside-code"] aside',
+        ], // String or Array
+        copyMessage: "复制成功", // default is 'Copy successfully and then paste it for use.'
+        duration: 1000, // prompt message display time.
+        showInMobile: false, // whether to display on the mobile side, default: false.
       },
     ],
-    sidebar: {
-      "/pages/learn/": [
-        {
-          title: "html",
-          collapsable: true, // false为默认展开菜单, 默认值true是折叠,
-          sidebarDepth: 1, //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-          children: [
-            ["html/description.md", "HTML 简介"],
-            ["html/html-editors.md", "HTML 编辑器"],
-          ],
-        },
-        {
-          title: "CSS",
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [["css/first.md", "初识css"]],
-        },
-        {
-          title: "Javascript",
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [],
-        },
-        {
-          title: "Vue3",
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            ["vue3/ref.md", "ref"],
-            ["vue3/watch.md", "watch 监听器"],
-          ],
-        },
-      ],
-      "/pages/moment/": [
-        {
-          title: "2021年",
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            {
-              title: "8月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [["2021/08/29-mother-killing-case.md", "29日"]],
-            },
-            {
-              title: "9月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                ["2021/09/07-smart-comment.md", "7日"],
-                ["2021/09/07-new-wallpaper.md", "7日"],
-              ],
-            },
-          ],
-        },
-        {
-          title: "2022年",
-          collapsable: true,
-          sidebarDepth: 1,
-          children: [
-            {
-              title: "1月",
-              collapsable: true,
-              // 你可以使用 themeConfig.sidebarDepth 自定义此行为。默认深度是 1，它提取 h2 标题。
-              // 将其设置为 0 将禁用标题链接，最大值为2，同时提取 h2 和 h3 标题。
-              sidebarDepth: 1,
-              children: [
-                ["2022/01/14-jay-chou-come-to-me-home.md", "14日"],
-                ["2022/01/23-back-to-jilin.md", "23日"],
-                ["2022/01/24-de-biao-fan.md", "24日"],
-              ],
-            },
-            {
-              title: "2月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                ["2022/02/04-winter-olympic-games.md", "04日"],
-                ["2022/02/04-bugler.md", "04日"],
-                ["2022/02/04-commentary.md", "04日"],
-                ["2022/02/07-meet-best-friend.md", "07日"],
-                ["2022/02/07-waiting-flight.md", "07日"],
-                ["2022/02/07-boarding.md", "07日"],
-                ["2022/02/08-summarize-the-trip.md", "08日"],
-                ["2022/02/08-career-planning.md", "08日"],
-                ["2022/02/08-start-working.md", "08日"],
-                ["2022/02/13-the-way-to-speak.md", "13日"],
-                ["2022/02/21-guangzhou-is-so-cold.md", "21日"],
-                ["2022/02/23-the-world-should-not-be-like-this.md", "23日"],
-                ["2022/02/23-last-words-in-a-dream.md", "23日"],
-                ["2022/02/27-thanks-my-bro.md", "27日"],
-              ],
-            },
-            {
-              title: "3月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                ["2022/03/04-generate-electricity-with-love.md", "04日"],
-                ["2022/03/06-swimming.md", "06日"],
-                ["2022/03/06-have-a-baby-quickly.md", "06日"],
-                ["2022/03/07-disappeared-programmer.md", "07日"],
-                ["2022/03/30-query-paper-repetition-rate.md", "30日"],
-              ],
-            },
-            {
-              title: "4月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                ["2022/04/01.md", "01日"],
-                ["2022/04/05.md", "05日"],
-                ["2022/04/21.md", "21日"],
-                ["2022/04/23.md", "23日"],
-              ],
-            },
-            {
-              title: "5月",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                ["2022/05/03.md", "03日"],
-                ["2022/05/07.md", "07日"],
-                ["2022/05/09.md", "09日"],
-                ["2022/05/10.md", "10日"],
-              ],
-            },
-          ],
-        },
-      ],
-      "/pages/share/": [
-        {
-          title: "前端",
-          collapsable: false,
-          sidebarDepth: 1,
-          children: [
-            {
-              title: "HTML",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [["html/element.md", "HTML"]],
-            },
-            {
-              title: "CSS",
-              collapsable: true,
-              sidebarDepth: 1,
-              children: [
-                [
-                  "css/tooltip-by-html&css.md",
-                  "html + css实现UI框架 tooltip 效果",
-                ],
-                ["css/scroll-snap-type.md", "巧用 css 制作抖音划视频效果"],
-              ],
-            },
-            {
-              title: "Javascript",
-              collapsable: true,
-              children: [
-                ["javascript/input-chinese.md", "拼音输入过程频繁触发请求问题"],
-              ],
-            },
-          ],
-        },
-        // {
-        //   title: "node",
-        //   collapsable: false,
-        //   sidebarDepth: 1,
-        //   children: [["share.md", "福利向"]],
-        // },
-        {
-          title: "其他",
-          collapsable: false,
-          sidebarDepth: 1,
-          children: [
-            ["other/how-to-copy-in-csdn.md", "csdn免登陆破解"],
-            ["other/cascade-select-cleanup.md", "级联选择清除"],
-            ["other/register-vue-component.md", "全局注册vue组件"],
-            ["other/generate-directory-tree.md", "js代码生成结构树"],
-            ["other/vue-mobile-org.md", "移动端组织选人组件"],
-            ["pinia.md", "Pinia"],
-          ],
-        },
-        {
-          title: "成功他妈",
-          collapsable: false,
-          sidebarDepth: 1,
-          children: [
-            [
-              "mother-of-success/electron-builder-cant-find-python.md",
-              "electron-builder 找不到 python",
-            ],
-          ],
-        },
-      ],
-      "/pages/reading-notes/": [
-        {
-          title: "javaScript高级程序设计",
-          collapsable: false,
-          sidebarDepth: 1,
-          children: [
-            // 每一章是一个child
-            [
-              "ProfessionalJavaScriptForWebDevelopers/什么是JavaScript.md",
-              "什么是JavaScript",
-            ],
-            // [
-            //   "ProfessionalJavaScriptForWebDevelopers/HTML中的JavaScript.md",
-            //   "HTML中的JavaScript",
-            // ],
-          ],
-        },
-        // {
-        //   title: "另一本书",
-        //   collapsable: false,
-        //   sidebarDepth: 1,
-        //   children: [
-        //     // 每一章是一个child
-        //     [
-        //       "ProfessionalJavaScriptForWebDevelopers/什么是JavaScript.md",
-        //       "什么是JavaScript",
-        //     ],
-        //     [
-        //       "ProfessionalJavaScriptForWebDevelopers/HTML中的JavaScript.md",
-        //       "HTML中的JavaScript",
-        //     ],
-        //   ],
-        // },
-      ],
-    },
-    //评论
-    valineConfig: {
-      // valine 评论功能配置信息
-      appId: "5Ig9Yv6xXwWKvvgwqLj2hKyB-gzGzoHsz", // your appId
-      appKey: "KTMff9K1RAIxif1W2r76xrrr", // your appKey
-      placeholder: "壮士别走，先唠十块钱儿的~", // 评论框占位符
-      avatar: "robohash", // 评论用户的头像类型
-      highlight: true, // 代码高亮
-      recordIP: false, // 记录评论者的IP
-      // visitor: true, // 阅读量统计
-      enableQQ: true,
-      // lang:'en' // 设置这里就ok
-      // // 设置Bilibili表情包地址
-      // emojiCDN: "//i0.hdslb.com/bfs/emote/",
-      // // 表情title和图片映射
-      // emojiMaps: {
-      //   tv_doge: "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
-      //   tv_亲亲: "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
-      //   tv_偷笑: "bb690d4107620f1c15cff29509db529a73aee261.png",
-      //   tv_再见: "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
-      //   tv_冷漠: "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
-      //   tv_发怒: "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
-      //   tv_发财: "34db290afd2963723c6eb3c4560667db7253a21a.png",
-      //   tv_可爱: "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
-      //   tv_吐血: "09dd16a7aa59b77baa1155d47484409624470c77.png",
-      //   tv_呆: "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
-      //   tv_呕吐: "9f996894a39e282ccf5e66856af49483f81870f3.png",
-      //   tv_困: "241ee304e44c0af029adceb294399391e4737ef2.png",
-      //   tv_坏笑: "1f0b87f731a671079842116e0991c91c2c88645a.png",
-      //   tv_大佬: "093c1e2c490161aca397afc45573c877cdead616.png",
-      //   tv_大哭: "23269aeb35f99daee28dda129676f6e9ea87934f.png",
-      //   tv_委屈: "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
-      //   tv_害羞: "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
-      //   tv_尴尬: "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
-      //   tv_微笑: "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
-      //   tv_思考: "90cf159733e558137ed20aa04d09964436f618a1.png",
-      //   tv_惊吓: "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
-      //   // ... 更多表情
-      // },
-      emojiCDN:
-        "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets@master/emoji/valine/twemoji/",
-      emojiMaps: {
-        smile: "twemoji-1.png",
-        twemoji1: "twemoji-2.png",
-        twemoji2: "twemoji-3.png",
-        twemoji3: "twemoji-4.png",
-        twemoji4: "twemoji-5.png",
-        twemoji5: "twemoji-6.png",
-        twemoji6: "twemoji-7.png",
-        twemoji7: "twemoji-8.png",
-        twemoji8: "twemoji-9.png",
-        twemoji9: "twemoji-10.png",
-        twemoji10: "twemoji-11.png",
-        twemoji11: "twemoji-12.png",
-        twemoji12: "twemoji-13.png",
-        twemoji13: "twemoji-14.png",
-        twemoji14: "twemoji-15.png",
-        twemoji15: "twemoji-16.png",
-        twemoji16: "twemoji-17.png",
-        twemoji17: "twemoji-18.png",
-        twemoji18: "twemoji-19.png",
-        twemoji19: "twemoji-20.png",
-        twemoji20: "twemoji-21.png",
-        twemoji21: "twemoji-22.png",
-        twemoji22: "twemoji-23.png",
-        twemoji23: "twemoji-24.png",
-        twemoji24: "twemoji-25.png",
-        twemoji25: "twemoji-26.png",
-        twemoji26: "twemoji-27.png",
-        twemoji27: "twemoji-28.png",
-        twemoji28: "twemoji-29.png",
-        twemoji29: "twemoji-30.png",
-        twemoji30: "twemoji-31.png",
-        twemoji31: "twemoji-32.png",
-        twemoji32: "twemoji-33.png",
-        twemoji33: "twemoji-34.png",
-        twemoji34: "twemoji-35.png",
-        twemoji35: "twemoji-36.png",
-        twemoji36: "twemoji-37.png",
-        twemoji37: "twemoji-38.png",
-        twemoji38: "twemoji-39.png",
-        twemoji39: "twemoji-40.png",
-        twemoji40: "twemoji-41.png",
-        twemoji41: "twemoji-42.png",
-        twemoji42: "twemoji-43.png",
-        twemoji43: "twemoji-44.png",
-        twemoji44: "twemoji-45.png",
-        twemoji45: "twemoji-46.png",
-        twemoji46: "twemoji-47.png",
-        twemoji47: "twemoji-48.png",
-        twemoji48: "twemoji-49.png",
-        twemoji49: "twemoji-50.png",
-        twemoji50: "twemoji-51.png",
-        twemoji51: "twemoji-52.png",
-        twemoji52: "twemoji-53.png",
-        twemoji53: "twemoji-54.png",
-        twemoji54: "twemoji-55.png",
-        twemoji55: "twemoji-56.png",
-        twemoji56: "twemoji-57.png",
-        twemoji57: "twemoji-58.png",
-        twemoji58: "twemoji-59.png",
-        twemoji59: "twemoji-60.png",
-        twemoji60: "twemoji-61.png",
-        twemoji61: "twemoji-62.png",
-        twemoji62: "twemoji-63.png",
-        twemoji63: "twemoji-64.png",
-        twemoji64: "twemoji-65.png",
-        twemoji65: "twemoji-66.png",
-        twemoji66: "twemoji-67.png",
-        twemoji67: "twemoji-68.png",
-        twemoji68: "twemoji-69.png",
-        twemoji69: "twemoji-70.png",
-        twemoji70: "twemoji-71.png",
-        twemoji71: "twemoji-72.png",
-        twemoji72: "twemoji-73.png",
-        twemoji73: "twemoji-74.png",
-        twemoji74: "twemoji-75.png",
-        twemoji75: "twemoji-76.png",
-        twemoji76: "twemoji-77.png",
-        twemoji77: "twemoji-78.png",
-        twemoji78: "twemoji-79.png",
-        twemoji79: "twemoji-80.png",
-        twemoji80: "twemoji-81.png",
-        twemoji81: "twemoji-82.png",
-        twemoji82: "twemoji-83.png",
-        twemoji83: "twemoji-84.png",
-        twemoji84: "twemoji-85.png",
-        twemoji85: "twemoji-86.png",
-        twemoji86: "twemoji-87.png",
-        twemoji87: "twemoji-88.png",
-        twemoji88: "twemoji-89.png",
-        twemoji89: "twemoji-90.png",
-        twemoji90: "twemoji-91.png",
-        twemoji91: "twemoji-92.png",
-        twemoji92: "twemoji-93.png",
-        twemoji93: "twemoji-94.png",
-        twemoji94: "twemoji-95.png",
-        twemoji95: "twemoji-96.png",
-        twemoji96: "twemoji-97.png",
-        twemoji97: "twemoji-98.png",
-        twemoji98: "twemoji-99.png",
-        twemoji99: "twemoji-100.png",
-        twemoji100: "twemoji-101.png",
-        twemoji101: "twemoji-102.png",
-        twemoji102: "twemoji-103.png",
-        twemoji103: "twemoji-104.png",
-        twemoji104: "twemoji-105.png",
-        twemoji105: "twemoji-106.png",
-        twemoji106: "twemoji-107.png",
-        twemoji107: "twemoji-108.png",
-        twemoji108: "twemoji-109.png",
-        twemoji109: "twemoji-110.png",
-        twemoji110: "twemoji-111.png",
-        twemoji111: "twemoji-112.png",
-        twemoji112: "twemoji-113.png",
-        twemoji113: "twemoji-114.png",
-        twemoji114: "twemoji-115.png",
-        twemoji115: "twemoji-116.png",
-        twemoji116: "twemoji-117.png",
-        twemoji117: "twemoji-118.png",
-        twemoji118: "twemoji-119.png",
-        twemoji119: "twemoji-120.png",
-        twemoji120: "twemoji-121.png",
-        twemoji121: "twemoji-122.png",
-        twemoji122: "twemoji-123.png",
-        twemoji123: "twemoji-124.png",
-        twemoji124: "twemoji-125.png",
-      },
-    },
-    friendLink: [
+
+    [
+      "demo-block", // demo演示模块 https://github.com/xiguaxigua/vuepress-plugin-demo-block
       {
-        //每一个{}中为一个友链
-        title: "史蒂芬", //友联标题
-        desc: "越努力，越热爱，越幸运", //友链描述
-        email: "stefan_ysh@foxmail.com", //友链邮箱
-        link: "https://stefan-ysh.github.io", //友链地址
+        settings: {
+          // jsLib: ['http://xxx'], // 在线示例(jsfiddle, codepen)中的js依赖
+          // cssLib: ['http://xxx'], // 在线示例中的css依赖
+          // vue: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js', // 在线示例中的vue依赖
+          jsfiddle: false, // 是否显示 jsfiddle 链接
+          codepen: false, // 是否显示 codepen 链接
+          horizontal: false, // 是否展示为横向样式
+        },
       },
-      // {
-      //   "title": "vuepress-theme-reco",
-      //   "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-      //   "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-      //   "link": "https://vuepress-theme-reco.recoluan.com"
-      // }
     ],
-  },
+    [
+      "vuepress-plugin-zooming", // 放大图片
+      {
+        selector: ".theme-vdoing-content img:not(.no-zoom)", // 排除class是no-zoom的图片
+        options: {
+          bgColor: "rgba(0,0,0,0.6)",
+        },
+      },
+    ],
+    [
+      "vuepress-plugin-baidu-tongji", // 百度统计 （你可以去掉）
+      {
+        hm: "503f098e7e5b3a5b5d8c5fc2938af002",
+      },
+    ],
+    [
+      "vuepress-plugin-comment", // 评论
+      {
+        choosen: "gitalk",
+        options: {
+          clientID: "8cc37054f70be5c8b9d4",
+          clientSecret: "c84ac27dca1c71bf507d76406afc6bbadc6644af",
+          repo: "blog-gitalk-comment", // GitHub 仓库
+          owner: "stefan-ysh", // GitHub仓库所有者
+          admin: ["stefan-ysh"], // 对仓库有写权限的人
+          // distractionFreeMode: true,
+          pagerDirection: "last", // 'first'正序 | 'last'倒序
+          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+          title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
+          labels: ["Gitalk", "Comment"], // GitHub issue 的标签
+          body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>", // GitHub issue 的内容
+          createIssueManually: false,
+        },
+      },
+    ],
+    [
+      "@vuepress/last-updated", // "上次更新"时间格式
+      {
+        transformer: (timestamp, lang) => {
+          const dayjs = require("dayjs"); // https://day.js.org/
+          return dayjs(timestamp).format("YYYY/MM/DD, HH:mm:ss");
+        },
+      },
+    ],
+  ],
 };
