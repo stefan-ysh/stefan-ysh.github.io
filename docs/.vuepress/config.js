@@ -123,6 +123,21 @@ module.exports = {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
       },
     ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
+    [
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js" },
+    ],
+    [
+      "script",
+      {
+        src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+      },
+    ],
+    ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
+    [
+      "script",
+      { src: "https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js" },
+    ],
   ],
 
   // 插件配置
