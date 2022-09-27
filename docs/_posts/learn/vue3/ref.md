@@ -5,7 +5,7 @@ permalink: /pages/8a61b8/
 sidebar: auto
 isShowComments: false
 categories:
-  - 随笔
+  - vue
 ---
 
 ## 前言
