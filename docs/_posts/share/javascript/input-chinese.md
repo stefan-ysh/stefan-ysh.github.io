@@ -12,6 +12,8 @@ sidebar: auto
 
 ## 问题描述
 
+:sunny: 示例中需切换中文输入法
+
 <!-- 这样可以直接显示组件内的代码 -->
 <!-- <<< @/docs/.vuepress/components/input-request.vue -->
 
@@ -74,8 +76,6 @@ sidebar: auto
 
 输入完拼音并选择目标词后，才会触发请求
 :::demo
-
-:sunny:☀️
 
 ```html
 <template>
