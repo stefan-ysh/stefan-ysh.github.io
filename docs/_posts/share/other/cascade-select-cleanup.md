@@ -1,9 +1,10 @@
 ---
 title: 如何进行级联选择框的清除
 date: 2022-03-08 00:00:00
-categories: null
+categories:
+  - element-ui
 sticky: 1
-tags: 
+tags:
   - element-ui
 isShowComments: true
 permalink: /pages/b3b0ef/

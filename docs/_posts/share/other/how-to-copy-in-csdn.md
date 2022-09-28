@@ -1,9 +1,10 @@
 ---
 title: csdn免登录复制及剪贴板净化
 date: 2022-01-19 00:00:00
-categories: null
+categories:
+  - javascript
 sticky: 1
-tags: 
+tags:
   - CSDN
 isShowComments: true
 permalink: /pages/a20eb9/
@@ -97,19 +98,16 @@ sidebar: auto
 3. 将步骤 2 获取到的内容通过 clipboardData.setData() api 设置到到剪切板中
 
 ```javascript
-document.addEventListener("copy", function(e) {
+document.addEventListener("copy", function (e) {
   // step 1
   // 阻止默认事件：就是阻止Ctrl + C 或 鼠标右键复制的默认事件
   // 因为如果使用默认事件，csdn 就会通过这个渠道向复制到的内容里面塞进去最后三行
   e.preventDefault();
   // step 2
   // 此处需要对数据进行一些处理
-  var textArr = window
-    .getSelection()
-    .toString()
-    .split("\t");
+  var textArr = window.getSelection().toString().split("\t");
   var pasteText = "";
-  textArr.forEach(function(e) {
+  textArr.forEach(function (e) {
     pasteText += e;
   });
   // step 3
@@ -130,9 +128,51 @@ document.addEventListener("copy", function(e) {
 <!-- ```javascript
 javascript:document.addEventListener('copy',function(e){e.preventDefault();var textArr=window.getSelection().toString().split('\t');var pasteText='';textArr.forEach(function(e){pasteText+=e;});e.clipboardData.setData('text',pasteText);console.log('Clipboard has been purged successfully,the content is as follows：\n\n'+pasteText)});var preElement=document.getElementsByTagName('pre');var codeElement=document.getElementsByTagName('code');console.clear();console.log(`%c ${preElement.length} pre element${preElement.length>1?'s':''} and ${codeElement.length} code element${codeElement.length>1?'s':''} were found in total.`,"color:red;font-weight:bold;font-size:15px;");console.time("Elapsed time: ");for(let i=0;i<=preElement.length-1;i++){preElement[i].style.userSelect='text';console.log(`%c ${i+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");}for(let i=0;i<=codeElement.length-1;i++){codeElement[i].style.userSelect='text';console.log(`%c ${i+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");}console.timeEnd("Elapsed time: ");
 ``` -->
+
 ```javascript
-javascript:document.getElementById("article_content").style.height="100%",document.getElementsByClassName("hide-article-box")[0].style.display="none",document.addEventListener("copy",function(e){e.preventDefault();var t=window.getSelection().toString().split("\t"),l="";t.forEach(function(e){l+=e}),e.clipboardData.setData("text",l),console.log("Clipboard has been purged successfully,the content is as follows：\n\n"+l)});var preElement=document.getElementsByTagName("pre"),codeElement=document.getElementsByTagName("code");console.clear(),console.log(`%c ${preElement.length} pre element${preElement.length>1?"s":""} and ${codeElement.length} code element${codeElement.length>1?"s":""} were found in total.`,"color:red;font-weight:bold;font-size:15px;"),console.time("Elapsed time: ");for(let e=0;e<=preElement.length-1;e++)preElement[e].style.userSelect="text",console.log(`%c ${e+1}/${preElement.length} pre has been successfully cracked!`,"color:green;font-size:15px;");for(let e=0;e<=codeElement.length-1;e++)codeElement[e].style.userSelect="text",console.log(`%c ${e+1}/${codeElement.length} code has been successfully cracked!`,"color:blue;font-size:15px;");console.timeEnd("Elapsed time: ");
+javascript: (document.getElementById("article_content").style.height = "100%"),
+  (document.getElementsByClassName("hide-article-box")[0].style.display =
+    "none"),
+  document.addEventListener("copy", function (e) {
+    e.preventDefault();
+    var t = window.getSelection().toString().split("\t"),
+      l = "";
+    t.forEach(function (e) {
+      l += e;
+    }),
+      e.clipboardData.setData("text", l),
+      console.log(
+        "Clipboard has been purged successfully,the content is as follows：\n\n" +
+          l
+      );
+  });
+var preElement = document.getElementsByTagName("pre"),
+  codeElement = document.getElementsByTagName("code");
+console.clear(),
+  console.log(
+    `%c ${preElement.length} pre element${
+      preElement.length > 1 ? "s" : ""
+    } and ${codeElement.length} code element${
+      codeElement.length > 1 ? "s" : ""
+    } were found in total.`,
+    "color:red;font-weight:bold;font-size:15px;"
+  ),
+  console.time("Elapsed time: ");
+for (let e = 0; e <= preElement.length - 1; e++)
+  (preElement[e].style.userSelect = "text"),
+    console.log(
+      `%c ${e + 1}/${preElement.length} pre has been successfully cracked!`,
+      "color:green;font-size:15px;"
+    );
+for (let e = 0; e <= codeElement.length - 1; e++)
+  (codeElement[e].style.userSelect = "text"),
+    console.log(
+      `%c ${e + 1}/${codeElement.length} code has been successfully cracked!`,
+      "color:blue;font-size:15px;"
+    );
+console.timeEnd("Elapsed time: ");
 ```
+
 2. 在浏览器中创建一个书签
 
 <img src='/share/other/how-to-copy-in-csdn/4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>

@@ -1,12 +1,15 @@
 ---
 title: 元素全屏
 date: 2022-05-21 00:00:00
-categories: null
-tags: null
+categories:
+  - html
+tags:
+  - html
 isShowComments: false
 permalink: /pages/6152b6/
 sidebar: auto
 ---
+
 ```html
 <!DOCTYPE html>
 <html lang="en">

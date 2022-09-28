@@ -1,9 +1,10 @@
 ---
 title: vue 一次性全局注册自定义组件
 date: 2022-03-08 00:00:00
-categories: null
+categories:
+  - vue
 sticky: 1
-tags: 
+tags:
   - vue
 isShowComments: true
 permalink: /pages/a27fbb/
