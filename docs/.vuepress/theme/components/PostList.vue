@@ -1,21 +1,16 @@
 <template>
-  <div
-    class="post-list"
-    ref="postList"
-  >
-    <transition-group
-      tag="div"
-      name="post"
-    >
+  <div class="post-list" ref="postList">
+    <transition-group tag="div" name="post">
       <div
         class="post card-box"
         :class="item.frontmatter.sticky && 'iconfont icon-zhiding'"
         v-for="item in sortPosts"
         :key="item.key"
+        @click="goToPost(item)"
       >
         <div class="title-wrapper">
           <h2>
-            <router-link :to="item.path">{{item.title}}</router-link>
+            <router-link :to="item.path">{{ item.title }}</router-link>
           </h2>
           <div class="article-info">
             <a
@@ -24,54 +19,60 @@
               target="_blank"
               v-if="item.author && item.author.href"
               :href="item.author.href"
-            >{{ item.author.name ? item.author.name : item.author }}</a>
+              >{{ item.author.name ? item.author.name : item.author }}</a
+            >
             <span
               title="作者"
               class="iconfont icon-touxiang"
               v-else-if="item.author"
-            >{{ item.author.name ? item.author.name : item.author }}</span>
+              >{{ item.author.name ? item.author.name : item.author }}</span
+            >
 
             <span
               title="创建时间"
               class="iconfont icon-riqi"
               v-if="item.frontmatter.date"
-            >{{ item.frontmatter.date.split(' ')[0]}}</span>
+              >{{ item.frontmatter.date.split(" ")[0] }}</span
+            >
             <span
               title="分类"
               class="iconfont icon-wenjian"
-              v-if="$themeConfig.category !== false && item.frontmatter.categories"
+              v-if="
+                $themeConfig.category !== false && item.frontmatter.categories
+              "
             >
               <router-link
                 :to="`/categories/?category=${encodeURIComponent(c)}`"
                 v-for="(c, index) in item.frontmatter.categories"
                 :key="index"
-              >{{c}}</router-link>
+                >{{ c }}</router-link
+              >
             </span>
             <span
               title="标签"
               class="iconfont icon-biaoqian tags"
-              v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]"
+              v-if="
+                $themeConfig.tag !== false &&
+                item.frontmatter.tags &&
+                item.frontmatter.tags[0]
+              "
             >
               <router-link
                 :to="`/tags/?tag=${encodeURIComponent(t)}`"
                 v-for="(t, index) in item.frontmatter.tags"
                 :key="index"
-              >{{t}}</router-link>
+                >{{ t }}</router-link
+              >
             </span>
           </div>
         </div>
-        <div
-          class="excerpt-wrapper"
-          v-if="item.excerpt"
-        >
-          <div
-            class="excerpt"
-            v-html="item.excerpt"
-          ></div>
+        <div class="excerpt-wrapper" v-if="item.excerpt">
+          <div class="excerpt" v-html="item.excerpt"></div>
           <router-link
             :to="item.path"
             class="readmore iconfont icon-jiantou-you"
-          >阅读全文</router-link>
+            >阅读全文</router-link
+          >
         </div>
       </div>
     </transition-group>
@@ -83,70 +84,74 @@ export default {
   props: {
     category: {
       type: String,
-      default: ''
+      default: "",
     },
     tag: {
       type: String,
-      default: ''
+      default: "",
     },
     currentPage: {
       type: Number,
-      default: 1
+      default: 1,
     },
     perPage: {
       type: Number,
-      default: 10
-    }
+      default: 10,
+    },
   },
-  data () {
+  data() {
     return {
       sortPosts: [],
-      postListOffsetTop: 0
-    }
+      postListOffsetTop: 0,
+    };
   },
-  created () {
-    this.setPosts()
+  created() {
+    this.setPosts();
   },
-  mounted () {
+  mounted() {
     // this.postListOffsetTop = this.getElementToPageTop(this.$refs.postList) - 240
   },
   watch: {
-    currentPage () {
-      if (this.$route.query.p != this.currentPage) { // 此判断防止添加相同的路由信息（如浏览器回退时触发的）
+    currentPage() {
+      if (this.$route.query.p != this.currentPage) {
+        // 此判断防止添加相同的路由信息（如浏览器回退时触发的）
         this.$router.push({
           query: {
             ...this.$route.query,
-            p: this.currentPage
-          }
-        })
+            p: this.currentPage,
+          },
+        });
       }
       // setTimeout(() => {
       //   window.scrollTo({ top: this.postListOffsetTop }) // behavior: 'smooth'
       // },0)
-      this.setPosts()
+      this.setPosts();
     },
-    category () {
-      this.setPosts()
+    category() {
+      this.setPosts();
     },
-    tag () {
-      this.setPosts()
-    }
+    tag() {
+      this.setPosts();
+    },
   },
   methods: {
-    setPosts () {
-      const currentPage = this.currentPage
-      const perPage = this.perPage
+    setPosts() {
+      const currentPage = this.currentPage;
+      const perPage = this.perPage;
 
-      let posts = []
+      let posts = [];
       if (this.category) {
-        posts = this.$groupPosts.categories[this.category]
+        posts = this.$groupPosts.categories[this.category];
       } else if (this.tag) {
-        posts = this.$groupPosts.tags[this.tag]
+        posts = this.$groupPosts.tags[this.tag];
       } else {
-        posts = this.$sortPosts
+        posts = this.$sortPosts;
       }
 
-      this.sortPosts = posts.slice((currentPage - 1) * perPage, currentPage * perPage)
+      this.sortPosts = posts.slice(
+        (currentPage - 1) * perPage,
+        currentPage * perPage
+      );
     },
     // getElementToPageTop(el) {
     //   if(el && el.parentElement) {
@@ -154,14 +159,28 @@ export default {
     //   }
     //   return el.offsetTop
     // }
-  }
-}
+    goToPost({ path }) {
+      this.$router.push({ path });
+    },
+  },
+};
 </script>
 
-<style lang='stylus'>
+<style lang="stylus">
 .post-list
   margin-bottom 4rem
   .post
+    &:hover
+      cursor pointer
+      &:after
+        content: ''
+        position absolute
+        width 5px
+        left 0
+        top 0
+        bottom 0
+        background #3f7cca
+        border-radius 10px 0 0px 10px
     position relative
     padding 1rem 1.5rem
     margin-bottom 0.9rem
