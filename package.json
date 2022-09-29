@@ -28,6 +28,7 @@
   "dependencies": {
     "async-validator": "1.11.5",
     "element-ui": "^2.15.10",
+    "gitalk": "^1.8.0",
     "vuepress-plugin-comment": "^0.7.3"
   }
 }

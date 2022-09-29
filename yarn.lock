@@ -4800,7 +4800,7 @@ gitalk-fix@^1.5.2:
     preact-compat "3.16.0"
     react-flip-move "2.9.14"
 
-gitalk@^1.5.0:
+gitalk@^1.5.0, gitalk@^1.8.0:
   version "1.8.0"
   resolved "https://registry.npmjs.org/gitalk/-/gitalk-1.8.0.tgz#54cde437f399ea8ea23aeae3db5ce8dc81fe7f46"
   integrity sha512-/bWlUAeb0gXuo1SzBeduS07T4PEyL5WoRgxewUIg3liVUof5hUgW/hhx3ns2PJuiFkOxnsSuk1FPzwf6YESJaA==

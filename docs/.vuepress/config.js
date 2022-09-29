@@ -219,7 +219,7 @@ module.exports = {
     [
       "vuepress-plugin-baidu-tongji", // 百度统计 （你可以去掉）
       {
-        hm: "503f098e7e5b3a5b5d8c5fc2938af002",
+        // hm: "503f098e7e5b3a5b5d8c5fc2938af002",
       },
     ],
     [
@@ -227,9 +227,9 @@ module.exports = {
       {
         choosen: "gitalk",
         options: {
-          clientID: "8cc37054f70be5c8b9d4",
-          clientSecret: "c84ac27dca1c71bf507d76406afc6bbadc6644af",
-          repo: "blog-gitalk-comment", // GitHub 仓库
+          clientID: "c93cdcd3c62bd0c7592d",
+          clientSecret: "b8363a4aa575cb005c185dcf67c9e515c553ef53",
+          repo: "https://github.com/stefan-ysh/stefan-ysh.github.io.git", // GitHub 仓库
           owner: "stefan-ysh", // GitHub仓库所有者
           admin: ["stefan-ysh"], // 对仓库有写权限的人
           // distractionFreeMode: true,
