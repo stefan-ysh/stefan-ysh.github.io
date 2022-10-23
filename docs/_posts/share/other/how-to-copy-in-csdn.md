@@ -73,7 +73,7 @@ sidebar: auto
 
 打开浏览器控制台查看元素得知，之所以无法复制，是因为内容的包裹元素上多了一个样式[`user-select:none`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/user-select), 了解后追到，该样式是控制用户能否选中文本的。
 
-<img src='/share/other/how-to-copy-in-csdn/1.jpg' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./1.jpg' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 ## 解决方案
 
@@ -81,11 +81,11 @@ sidebar: auto
 
 既然原因找到了，那我们来验证一下，当我们把 `none` 改为 `text`，神奇的事情发生了，虽然还是提示`登录后复制`，但细心的你可能已经发现此时左侧已经可以选定内容了！
 
-<img src='/share/other/how-to-copy-in-csdn/2.jpg' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./2.jpg' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 此时我们粘贴到控制台看一下效果，发现粘贴也成功了，按理说现在已经算是解决了问题，但是作为一向追求完美（懒）的我来说，这还远远不够，毕竟复制完再删除下面三行的操作真的很傻。
 
-<img src='/share/other/how-to-copy-in-csdn/3.jpg'  align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./3.jpg'  align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 ### 剪贴板净化
 
@@ -175,21 +175,21 @@ console.timeEnd("Elapsed time: ");
 
 2. 在浏览器中创建一个书签
 
-<img src='/share/other/how-to-copy-in-csdn/4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./4.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 3. 右键`步骤2`创建的书签，进行修改
 
-<img src='/share/other/how-to-copy-in-csdn/5.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./5.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 4. 将`步骤1`中复制的代码，粘贴到书签的网址一栏
 
 - 修改前
 
-<img src='/share/other/how-to-copy-in-csdn/6.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./6.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 - 修改后
 
-<img src='/share/other/how-to-copy-in-csdn/7.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
+<img src='./7.png' align='center' style='width:100%;height:100%;box-shadow:1px 1px 5px pink;'/>
 
 5.至此就已经完成了，碰到需要复制的地方，点一下你所创建的书签，就可以随便复制啦。
 
