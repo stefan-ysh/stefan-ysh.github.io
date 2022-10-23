@@ -4,7 +4,7 @@ date: 2022-10-23 21:39:49
 permalink: /pages/adc19a/
 sidebar: auto
 categories:
-  - 分享
+  - javascript
 ---
 
 ![问题图片](./js-arr-unshift-push.jpeg)
