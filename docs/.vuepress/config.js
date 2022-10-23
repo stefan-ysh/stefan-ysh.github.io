@@ -222,26 +222,26 @@ module.exports = {
         // hm: "503f098e7e5b3a5b5d8c5fc2938af002",
       },
     ],
-    [
-      "vuepress-plugin-comment", // 评论
-      {
-        choosen: "gitalk",
-        options: {
-          clientID: "c93cdcd3c62bd0c7592d",
-          clientSecret: "b8363a4aa575cb005c185dcf67c9e515c553ef53",
-          repo: "https://github.com/stefan-ysh/stefan-ysh.github.io.git", // GitHub 仓库
-          owner: "stefan-ysh", // GitHub仓库所有者
-          admin: ["stefan-ysh"], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: "last", // 'first'正序 | 'last'倒序
-          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
-          title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
-          labels: ["Gitalk", "Comment"], // GitHub issue 的标签
-          body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>", // GitHub issue 的内容
-          createIssueManually: false,
-        },
-      },
-    ],
+    // [
+    //   "vuepress-plugin-comment", // 评论
+    //   {
+    //     choosen: "gitalk",
+    //     options: {
+    //       clientID: "c93cdcd3c62bd0c7592d",
+    //       clientSecret: "b8363a4aa575cb005c185dcf67c9e515c553ef53",
+    //       repo: "https://github.com/stefan-ysh/stefan-ysh.github.io.git", // GitHub 仓库
+    //       owner: "stefan-ysh", // GitHub仓库所有者
+    //       admin: ["stefan-ysh"], // 对仓库有写权限的人
+    //       // distractionFreeMode: true,
+    //       pagerDirection: "last", // 'first'正序 | 'last'倒序
+    //       id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+    //       title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
+    //       labels: ["Gitalk", "Comment"], // GitHub issue 的标签
+    //       body: "页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>", // GitHub issue 的内容
+    //       createIssueManually: false,
+    //     },
+    //   },
+    // ],
     [
       "@vuepress/last-updated", // "上次更新"时间格式
       {
