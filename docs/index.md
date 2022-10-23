@@ -7,7 +7,7 @@ tagline: null
 # actionLink: /web/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式
 #提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
-bannerBg: https://i0.wp.com/sguru.org/wp-content/uploads/2017/06/cool-profile-pictures-for-youtube-profile-banner-sharing-thread-i-made-a-persona-4-3-one-inside-cool-banners-for-youtube.jpg?ssl=1
+bannerBg: '/img/home-banner-bg.jpg'
 # features:# 可选的
 # - title: 前端
 #   details: JavaScript、ES6、Vue框架等前端技术
@@ -46,7 +46,6 @@ bannerBg: https://i0.wp.com/sguru.org/wp-content/uploads/2017/06/cool-profile-pi
 
 </br>
 
-
 ## 特色功能
 
 博客部分特色功能介绍
@@ -81,7 +80,6 @@ bannerBg: https://i0.wp.com/sguru.org/wp-content/uploads/2017/06/cool-profile-pi
 ```
 
 :::
-
 
 ## :email: 联系
 
