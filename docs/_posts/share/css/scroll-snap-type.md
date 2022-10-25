@@ -2,9 +2,9 @@
 title: 巧用 css 仿刷抖音效果
 date: 2022-05-18 00:00:00
 categories:
-  - html
-tags:
   - css
+# tags:
+#   - css
 isShowComments: true
 permalink: /pages/9b8eaf/
 sidebar: auto
@@ -53,15 +53,15 @@ css 的 scroll-snap-type 属性：
           overflow: auto;
         }
         .none {
-          /* 不做任何处理，等同于未设置 */
+          /*不做任何处理，等同于未设置*/
           scroll-snap-type: none;
         }
         .mandatory {
-          /* mandatory   可理解为四舍五入。滚动长度大于子元素一半以上，将会跳转到下一子元素,都则展示当前子元素*/
+          /*mandatory   可理解为四舍五入。滚动长度大于子元素一半以上，将会跳转到下一子元素,都则展示当前子元素*/
           scroll-snap-type: y mandatory;
         }
         .proximity {
-          /* proximity  靠近切换，足够靠近下一子元素时，完全展示下一个，足够靠近上一子元素时，展示，其余长度时，保持与 none 桶阳光*/
+          /*proximity  靠近切换，足够靠近下一子元素时，完全展示下一个，足够靠近上一子元素时，展示，其余长度时，保持与 none 桶阳光*/
           scroll-snap-type: y proximity;
         }
         .item {
@@ -76,7 +76,7 @@ css 的 scroll-snap-type 属性：
           color: #fff;
         }
       </style>
-      <div style="display:flex;justify-content:space-between;"> 
+      <div style="display:flex;justify-content:space-between;">
         <div class="none">
           <div class="item">1</div>
           <div class="item">2</div>
@@ -105,7 +105,7 @@ css 的 scroll-snap-type 属性：
           <div class="item">7</div>
         </div>
       </div>
-     
+
   </html>
 
 ## 示例二
@@ -127,7 +127,7 @@ css 的 scroll-snap-type 属性：
       overflow: auto;
     }
     .mandatory {
-      /* mandatory   可理解为四舍五入。滚动长度大于子元素一半以上，将会跳转到下一子元素,都则展示当前子元素*/
+      /*mandatory   可理解为四舍五入。滚动长度大于子元素一半以上，将会跳转到下一子元素,都则展示当前子元素*/
       scroll-snap-type: y mandatory;
     }
     .item_bottom_start,
