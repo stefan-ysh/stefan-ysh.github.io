@@ -1,5 +1,5 @@
 ---
-title: 利用 style 标签实现样式的所见即所得
+title: 利用 style 标签实现 css 样式编写过程可视化
 date: 2022-10-30 13:55:48
 permalink: /pages/55bc17/
 sidebar: auto
@@ -10,13 +10,11 @@ categories:
 
 ## 描述
 
-在推上看到一个博主分享了`style`标签也可以当成元素开使用的视频，联想到是不是可以做一个样式编写效果立现的功能，就是所说的所见即所得。
-
-> [视频地址](https://twitter.com/wesbos/status/1586360039174209536?s=20&t=ilkYTDynUExMijw2jGAYkg)
+在推上看到一个博主分享了`style`标签也可以当成元素来使用的视频，感觉这个思路挺新鲜，转而联想到是不是可以做一个样式编写过程可视化的功能，也就是所说的所见即所得。
 
 ## 演示
 
-看完博主的演示，我直接就想到了之前看到的一些网站实现样式编写可视化，想着可以试一下，下面是写的 demo。
+之前看到有些博客首页就会显示一边写样式，一边呈现效果的案例，想着可以用这个方法试一下，下面是我写的 `Demo`。
 
 <html lang="en">
 <head>
@@ -208,6 +206,11 @@ renderFun(document.getElementById("style-block"), styleStr);
 </script>
 </html>
 
-## 总结
+## 待办
 
-未完成样式代码换行，后续想到方案继续完善
+- 样式代码换行
+
+## 附录
+
+- [视频地址](https://twitter.com/wesbos/status/1586360039174209536?s=20&t=ilkYTDynUExMijw2jGAYkg)
+- [Demo Link](https://codepen.io/stefan_ysh/pen/PoaPWJe)
