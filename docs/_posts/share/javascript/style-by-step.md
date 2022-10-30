@@ -1,5 +1,5 @@
 ---
-title: style-by-step
+title: 利用 style 标签实现样式的所见即所得
 date: 2022-10-30 13:55:48
 permalink: /pages/55bc17/
 sidebar: auto
@@ -16,7 +16,8 @@ categories:
 
 ## 演示
 
-看完博主的演示，我直接就想到了之前看到的一些网站实现样式编写可视化，想着可以试一下，下面是写的demo。
+看完博主的演示，我直接就想到了之前看到的一些网站实现样式编写可视化，想着可以试一下，下面是写的 demo。
+
 <html lang="en">
 <head>
 <style>
@@ -54,7 +55,7 @@ categories:
 <script>
   function renderFun(el, styleStr) {
  let idx = 1;
- const timer = setInterval(() => {
+ const timer = setInterval(function() {
   const str = styleStr[idx];
   if (idx === styleStr.length - 1) {
    el.style.display = "none";
