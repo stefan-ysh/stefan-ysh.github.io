@@ -21,8 +21,9 @@ module.exports = {
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: "上次更新", // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: "docs", // 编辑的文件夹
-    editLinks: true, // 启用编辑
-    editLinkText: "编辑",
+    // 文章底部显示编辑按钮
+    // editLinks: true, // 启用编辑
+    // editLinkText: "编辑",
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
@@ -110,7 +111,7 @@ module.exports = {
       {
         name: "keywords",
         content:
-          "后端博客,个人技术博客,后端,后端开发,后端框架,web后端,后端面试题,技术文档,学习,面试,源码，感悟，Java,Pythn,git,github,markdown",
+          "前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,源码，感悟，Java,Pythn,git,github,markdown",
       },
     ],
     ["meta", { name: "baidu-site-verification", content: "7F55weZDDc" }], // 百度统计的站长验证（你可以去掉）
