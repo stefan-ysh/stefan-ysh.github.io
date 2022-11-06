@@ -10,7 +10,7 @@ categories:
 
 <p align="center">
   <a href="https://github.com/stefan-ysh/react-todo">
-    <img alt="React TodoList" height="64" src="./logo.svg">
+    <img alt="React TodoList" height="64" src="./../../../.vuepress/public/post/project/react-todolist/logo.svg">
   </a>
 </p>
 <div align="center">
@@ -19,7 +19,7 @@ categories:
 
 > 这是一个学习 `react` 过程中产生的个人项目，不定期更新
 
-![用户界面](./todo-list.gif)
+![用户界面](./../../../.vuepress/public/post/project/react-todolist/todo-list.gif)
 
 ## ✨ 特性
 
