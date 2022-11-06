@@ -1,5 +1,5 @@
 ---
-title: 插件推荐
+title: vscode 插件推荐
 date: 2022-09-27 23:26:55
 permalink: /pages/3816fc/
 sidebar: auto
@@ -335,7 +335,7 @@ module.exports = {
 
 #### 1.1 场景描述
 
-当我们想要用 vscode 打开某个文件或者文件夹的时候，只能打开`vscode `之后在通过`文件 `-> `打开文件/文件夹`来操作，操作复杂，不方便，如果能对着`目标文件/文件夹`直接右键通过`vscode`打开就好了，下面介绍一种实现的方法。
+当我们想要用 vscode 打开某个文件或者文件夹的时候，只能打开`vscode`之后在通过`文件`-> `打开文件/文件夹`来操作，操作复杂，不方便，如果能对着`目标文件/文件夹`直接右键通过`vscode`打开就好了，下面介绍一种实现的方法。
 
 #### 1.2 设置方式
 
@@ -400,7 +400,7 @@ Windows Registry Editor Version 5.00
 
 #### 2.1 场景描述
 
-当我们打开的文件太多时，`vscode `默认为超出滚动，需要靠滚动条才能找到目标文件，查找起来很费时间
+当我们打开的文件太多时，`vscode`默认为超出滚动，需要靠滚动条才能找到目标文件，查找起来很费时间
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/244005/1661757813047-8640932e-f7dc-47e0-9b75-6a7c6d0ed151.png#clientId=uc5a7f343-a01c-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=181&id=u85a5ab1b&name=image.png&originHeight=187&originWidth=621&originalType=binary&ratio=1&rotation=0&showTitle=true&size=19739&status=done&style=stroke&taskId=u6de1ecee-8415-40d1-a76d-30ec26491d4&title=%E5%A4%9A%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE%E5%A4%8D%E6%9D%82&width=600 "多文件查找复杂")
 
 #### 2.2 设置方式
