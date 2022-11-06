@@ -1,10 +1,7 @@
 ---
-title: 移动端组织选人组件
+title: vue2 移动端组织选人组件
 date: 2022-04-02 21:06:00
-categories:
-  - vue
-sticky: 1
-tags:
+categories: 
   - vue
 isShowComments: true
 permalink: /pages/19b3ad/

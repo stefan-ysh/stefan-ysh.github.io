@@ -7,7 +7,7 @@ categories:
   - node
 ---
 
-![fix node sass](./fix-nodesass-version.jpeg)
+![fix node sass](../../../.vuepress/public/post/share/node/node-sass-version/fix-nodesass-version.jpeg)
 
 ## 问题描述
 

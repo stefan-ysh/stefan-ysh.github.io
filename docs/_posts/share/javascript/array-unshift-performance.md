@@ -6,8 +6,8 @@ sidebar: auto
 categories:
   - javascript
 ---
+![性能对比图](../../../.vuepress/public/post/share/javascript/array-unshift-performance/js-arr-unshift-push.jpeg)
 
-![问题图片](./js-arr-unshift-push.jpeg)
 
 ## 问题描述
 
@@ -59,7 +59,7 @@ push: 3.403ms
 通过以上结果对比，可以发现，在数量相同(100000)的情况下，`unshift`方法操作所花的时间是`push`的 300 多倍(不同系统或有差异)，这是因为`unshift`方法是将数据添加到数组的前面，也就意味着原有元素的位置将要向后移一位，而`push`则直接添加到数组最后，不对其他元素的位置造成影响，也就少去了更换位置的步骤，如果数量够多，差距将呈指数增加。
 下图为网络资料，可参考
 
-![性能对比图](./unshift-push-performance.jpeg)
+![问题图片](../../../.vuepress/public/post/share/javascript/array-unshift-performance/unshift-push-performance.jpeg)
 
 那么，如果我们要实现这种方法，应该怎么做呢？
 

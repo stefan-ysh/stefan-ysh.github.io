@@ -1,14 +1,13 @@
 ---
 title: 拼音输入过程频繁触发 input 事件的问题解决
 date: 2022-05-15 00:00:00
-categories:
-  - javascript
-sticky: 1
-tags:
+tags: 
   - javascript
 isShowComments: true
 permalink: /pages/eef0d6/
 sidebar: auto
+categories: 
+  - 随笔
 ---
 
 ## 问题描述

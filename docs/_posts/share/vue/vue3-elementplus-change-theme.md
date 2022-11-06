@@ -7,7 +7,7 @@ categories:
   - vue
 ---
 
-![如何更改 vue + element plus 主题](./how-to-change-vue3-theme.jpg)
+![如何更改 vue + element plus 主题](../../../.vuepress/public/post/share/vue/vue3-elementplus-change-theme/how-to-change-vue3-theme.jpg)
 网站换肤这种需求，相信大家已经在熟悉不过了，例如特殊节日等，会更改主题色为当前日期相符的颜色，如春节国庆为红色等；又或者更熟悉的，网站分为深色和浅色，又叫日间/夜间，因为夜晚光线较暗，将网站调成夜间模式会减少对眼睛的刺激。最近也在做此类需求，所以在这里做一下记录
 
 ## 技术栈
@@ -238,4 +238,4 @@ changeTheme(theme) {
 
 ## 案例演示
 
-![demo](./change-theme-demo.gif)
+![demo](../../../.vuepress/public/post/share/vue/vue3-elementplus-change-theme/change-theme-demo.gif)
