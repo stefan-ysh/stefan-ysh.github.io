@@ -1,5 +1,5 @@
 ---
-title: 基础配置
+title: vacode 基础配置
 date: 2022-09-27 23:28:09
 permalink: /pages/77b395/
 sidebar: auto
