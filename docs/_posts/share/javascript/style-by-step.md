@@ -51,35 +51,27 @@ categories:
 </div>
 </body>
 <script>
-  function renderFun(el, styleStr) {
- let idx = 1;
- const timer = setInterval(function() {
-  const str = styleStr[idx];
-  if (idx === styleStr.length - 1) {
-   el.style.display = "none";
-   return clearInterval(timer);
-  }
-  if ([";", "{", "}"].includes(str)) {
-   el.innerHTML += `${str}`;
-  } else {
-   el.innerHTML += str;
-  }
-  idx++;
-  el.scrollBy({
-   left: 0,
-   top: 200,
-   behavior: "smooth"
-  });
- }, 20);
+function renderFun(el, styleStr) {
+  let i = 0;
+  const timer = setInterval(() => {
+    const str = `${styleStr.substr(0, i)}`;
+    if (i === styleStr.length - 1) {
+      el.style.display = 'none';
+      return clearInterval(timer);
+    }
+    el.innerText = str;
+    i++;
+    el.scrollBy({
+      left: 0,
+      top: 1000,
+      behavior: 'smooth',
+    });
+  }, 90);
 }
-const styleStr = `
-body{
-//  background: #353437;
-}
-.factory{
+const styleStr = `.factory {
   position: relative;
 }
-.crate{
+.crate {
   position: absolute;  
   background: #b08f7c;
   width: 55px;
@@ -92,11 +84,11 @@ body{
   width: 300px;  
   border: 1px dashed #60b0ff;  
 }
-.b1{
+.b1 {
   top: 0;
   animation: moveBeltLR .15s linear infinite;
 }
-.b2{
+.b2 {
   top: 58px;  
   animation: moveBeltRL .15s linear infinite;
 }
@@ -108,7 +100,7 @@ body{
   border: 5px solid #60b0ff;
   animation: spinMotor 2.2s linear infinite;
 }
-.motor:before{
+.motor:before {
   content: '';
   position: absolute;
   top: 24px;
@@ -130,23 +122,35 @@ body{
   border-radius: 5px;
   background: #60b0ff;
 }
-.m1{
+.m1 {
   left: 10px;  
 }
-.m2{
+.m2 {
   left: 310px;  
 }
 @keyframes moveBeltLR {
-  from {left: 35px;}
-  to   {left: 40px;}
+  from {
+    left: 35px;
+  }
+  to {
+    left: 40px;
+  }
 }
 @keyframes moveBeltRL {
-  from {left: 40px;}
-  to   {left: 35px;}
+  from {
+    left: 40px;
+  }
+  to {
+    left: 35px;
+  }
 }
 @keyframes spinMotor {
-  from {transform: rotate(0deg);}
-  to   {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes crate {
   0% {
@@ -202,7 +206,8 @@ body{
     opacity:0;
   }
 }`;
-renderFun(document.getElementById("style-block"), styleStr);
+renderFun(document.getElementById('style-block'), styleStr);
+
 </script>
 </html>
 
