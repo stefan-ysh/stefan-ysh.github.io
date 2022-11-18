@@ -1,34 +1,26 @@
 {
-  "name": "theme-vdoing-blog",
+  "name": "blog.mphy.top",
   "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs --temp .temp",
-    "build": "vuepress build docs",
-    "deploy": "bash deploy.sh",
-    "editFm": "node utils/editFrontmatter.js",
-    "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
-    "publish": "cd ./theme-vdoing && npm publish && cd .. && yarn updateTheme",
-    "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
+    "dev": "vitepress dev --host 0.0.0.0",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
   },
+  "keywords": ["blog"],
+  "author": "",
   "license": "MIT",
   "devDependencies": {
-    "dayjs": "^1.9.7",
-    "inquirer": "^7.1.0",
-    "json2yaml": "^1.1.0",
-    "vuepress": "1.8.0",
-    "vuepress-plugin-baidu-autopush": "^1.0.1",
-    "vuepress-plugin-baidu-tongji": "^1.0.1",
-    "vuepress-plugin-demo-block": "^0.7.2",
-    "vuepress-plugin-one-click-copy": "^1.0.2",
-    "vuepress-plugin-thirdparty-search": "^1.0.2",
-    "vuepress-plugin-zooming": "^1.1.7",
-    "vuepress-theme-vdoing": "^1.8.5",
-    "yamljs": "^0.3.0"
+    "@types/node": "^18.11.8",
+    "@vue/compiler-sfc": "^3.2.41",
+    "fs-extra": "^10.1.0",
+    "globby": "^11.1.0",
+    "gray-matter": "^4.0.3",
+    "typescript": "^4.8.4",
+    "vitepress": "^1.0.0-alpha.26"
   },
   "dependencies": {
-    "async-validator": "1.11.5",
-    "element-ui": "^2.15.10",
-    "gitalk": "^1.8.0",
-    "vuepress-plugin-comment": "^0.7.3"
+    "@algolia/client-search": ">= 4.9.1 < 6"
   }
 }
