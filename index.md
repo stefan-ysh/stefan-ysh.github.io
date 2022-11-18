@@ -4,8 +4,7 @@ date: 2021-06-30
 title: home
 sidebar: false
 ---
-
-<script setup lang='ts'>
+<script setup>
 import Page from "./.vitepress/theme/components/Page.vue";
 import { useData } from "vitepress";
 const { theme } = useData();
