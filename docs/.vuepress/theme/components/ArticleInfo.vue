@@ -84,6 +84,13 @@
         </div>
         <div
           class="date iconfont icon-riqi"
+          :title="`阅读时间约为${readTime}`"
+          v-if="articleInfo.date"
+        >
+          <a href="javascript:;">{{ readTime }} min</a>
+        </div>
+        <div
+          class="date iconfont icon-riqi"
           title="创建时间"
           v-if="articleInfo.date"
         >
@@ -115,10 +122,14 @@ export default {
   data() {
     return {
       articleInfo: {},
+      readTime: 0
     };
   },
   created() {
     this.articleInfo = this.getPageInfo();
+    this.$nextTick(()=>{
+      this.computeReadTime()
+    })
   },
   watch: {
     "$route.path"() {
@@ -126,6 +137,18 @@ export default {
     },
   },
   methods: {
+    // 计算阅读时间
+    computeReadTime() {
+      const content= document.querySelector(".theme-vdoing-content").innerText.length;
+      // 预估阅读时间(一般，人的阅读速度是300-500字/分钟 ，所以就取了个400，这个值可以根据自己的实际需求来更改)
+      const estimatedTime =  Math.round(content / 400);
+      
+      if (estimatedTime > 1) {
+        return this.readTime = estimatedTime;
+      } else {
+        return this.readTime = 1;
+      }
+    },
     getPageInfo() {
       const pageInfo = this.$page;
       const { relativePath } = pageInfo;
