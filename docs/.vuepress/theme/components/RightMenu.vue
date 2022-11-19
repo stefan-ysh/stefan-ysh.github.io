@@ -1,5 +1,5 @@
 <template>
-  <div class="right-menu-wrapper">
+  <div class="right-menu-wrapper" v-if="0">
     <div class="right-menu-margin">
       <div class="right-menu-content">
         <div
