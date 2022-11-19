@@ -3,6 +3,7 @@
     <!-- banner块 s -->
     <div
       class="banner"
+      v-if="0"
       :class="{ 'hide-banner': !showBanner }"
       :style="bannerBgStyle"
     >
@@ -338,6 +339,7 @@ export default {
 
 <style lang="stylus" scoped>
 .home-wrapper
+  margin-top: 70px
   .banner
     width 100%
     min-height 450px
