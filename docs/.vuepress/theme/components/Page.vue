@@ -1,7 +1,6 @@
 <template>
   <div>
     <main class="page">
-
       <div :class="`theme-vdoing-wrapper ${bgStyle}`">
         <ArticleInfo v-if="isArticle()" />
         <component
@@ -17,20 +16,17 @@
               :src="currentBadge"
               v-if="$themeConfig.titleBadge === false ? false : true"
             />
-            {{this.$page.title}}
+            {{ this.$page.title }}
           </h1>
           <slot name="top" v-if="isShowSlotT" />
 
           <Content class="theme-vdoing-content" />
         </div>
-  <slot name="bottom"  v-if="isShowSlotB" />
+        <slot name="bottom" v-if="isShowSlotB" />
         <PageEdit />
-
 
         <PageNav v-bind="{ sidebarItems }" />
       </div>
-
-
 
       <UpdateArticle
         :length="3"
@@ -42,74 +38,89 @@
 </template>
 
 <script>
-import PageEdit from '@theme/components/PageEdit.vue'
-import PageNav from '@theme/components/PageNav.vue'
-import ArticleInfo from './ArticleInfo.vue'
-import Catalogue from './Catalogue.vue'
-import UpdateArticle from './UpdateArticle.vue'
-import RightMenu from './RightMenu.vue'
+import PageEdit from "@theme/components/PageEdit.vue";
+import PageNav from "@theme/components/PageNav.vue";
+import ArticleInfo from "./ArticleInfo.vue";
+import Catalogue from "./Catalogue.vue";
+import UpdateArticle from "./UpdateArticle.vue";
+import RightMenu from "./RightMenu.vue";
 
-import TitleBadgeMixin from '../mixins/titleBadge'
+import TitleBadgeMixin from "../mixins/titleBadge";
 
 export default {
   mixins: [TitleBadgeMixin],
-  data () {
+  data() {
     return {
-      updateBarConfig: null
-    }
+      updateBarConfig: null,
+    };
   },
-  props: ['sidebarItems'],
-  components: { PageEdit, PageNav, ArticleInfo, Catalogue, UpdateArticle, RightMenu },
-  created () {
-    this.updateBarConfig = this.$themeConfig.updateBar
+  props: ["sidebarItems"],
+  components: {
+    PageEdit,
+    PageNav,
+    ArticleInfo,
+    Catalogue,
+    UpdateArticle,
+    RightMenu,
+  },
+  created() {
+    this.updateBarConfig = this.$themeConfig.updateBar;
   },
   computed: {
-    bgStyle () {
-      const { contentBgStyle } = this.$themeConfig
-      return contentBgStyle ? 'bg-style-' + contentBgStyle : ''
+    bgStyle() {
+      const { contentBgStyle } = this.$themeConfig;
+      return contentBgStyle ? "bg-style-" + contentBgStyle : "";
     },
-    isShowUpdateBar () {
-      return this.updateBarConfig && this.updateBarConfig.showToArticle === false ? false : true
+    isShowUpdateBar() {
+      return this.updateBarConfig &&
+        this.updateBarConfig.showToArticle === false
+        ? false
+        : true;
     },
-    showTitle () {
-      return !this.$frontmatter.pageComponent
+    showTitle() {
+      return !this.$frontmatter.pageComponent;
     },
-    showRightMenu () {
-      const { $frontmatter, $themeConfig, $page } = this
-      const { sidebar } = $frontmatter
+    showRightMenu() {
+      const { $frontmatter, $themeConfig, $page } = this;
+      const { sidebar } = $frontmatter;
       return (
         $themeConfig.rightMenuBar !== false &&
         $page.headers &&
         ($frontmatter && sidebar && sidebar !== false) !== false
-      )
+      );
     },
-    pageComponent () {
-      return this.$frontmatter.pageComponent ? this.$frontmatter.pageComponent.name : false
+    pageComponent() {
+      return this.$frontmatter.pageComponent
+        ? this.$frontmatter.pageComponent.name
+        : false;
     },
     isShowSlotT() {
-      return this.getShowStatus('pageTshowMode')
+      return this.getShowStatus("pageTshowMode");
     },
     isShowSlotB() {
-      return this.getShowStatus('pageBshowMode')
-    }
+      return this.getShowStatus("pageBshowMode");
+    },
   },
   methods: {
     getShowStatus(prop) {
-      const { htmlModules } = this.$themeConfig
-      if(!htmlModules) return false
-      if (htmlModules[prop] === 'article') { // 仅文章页显示
-        return this.isArticle()
-      } else if (htmlModules[prop] === 'custom'){ // 仅自定义页显示
-        return !(this.isArticle())
-      } else { // 全部显示
-        return true
+      const { htmlModules } = this.$themeConfig;
+      if (!htmlModules) return false;
+      if (htmlModules[prop] === "article") {
+        // 仅文章页显示
+        return this.isArticle();
+      } else if (htmlModules[prop] === "custom") {
+        // 仅自定义页显示
+        return !this.isArticle();
+      } else {
+        // 全部显示
+        return true;
       }
     },
-    isArticle () {
-      return this.$frontmatter.article !== false
-    }
-  }
-}
+    isArticle() {
+      return this.$frontmatter.article !== false;
+    },
+  },
+};
 </script>
 
 <style lang="stylus">
