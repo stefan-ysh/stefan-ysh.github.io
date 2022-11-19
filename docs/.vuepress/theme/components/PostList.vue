@@ -6,8 +6,9 @@
         :class="item.frontmatter.sticky && 'iconfont icon-zhiding'"
         v-for="item in sortPosts"
         :key="item.key"
-        @click="goToPost(item)"
       >
+        <!-- 打开文章的方法，在此处暂时注释，因为下面点击分类/标签会冒泡 -->
+        <!-- @click="goToPost(item)" -->
         <div class="title-wrapper">
           <h2>
             <router-link :to="item.path">{{ item.title }}</router-link>
