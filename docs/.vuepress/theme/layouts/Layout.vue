@@ -80,7 +80,7 @@
       /> -->
     </Page>
 
-    <Footer />
+    <Footer v-if="0" />
 
     <Buttons
       ref="buttons"
