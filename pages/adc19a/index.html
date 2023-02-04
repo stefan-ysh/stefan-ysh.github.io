@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>说说 js unshift 的性能问题 | Ysh Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <meta name="description" content="我的个人博客">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,源码，感悟，Java,Pythn,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.384604d6.css" as="style"><link rel="preload" href="/assets/js/app.b0cfaad7.js" as="script"><link rel="preload" href="/assets/js/2.e4b24d74.js" as="script"><link rel="preload" href="/assets/js/3.2aa4cb6b.js" as="script"><link rel="preload" href="/assets/js/9.320bd368.js" as="script"><link rel="prefetch" href="/assets/js/10.279606c3.js"><link rel="prefetch" href="/assets/js/11.c8085ce8.js"><link rel="prefetch" href="/assets/js/12.609df56a.js"><link rel="prefetch" href="/assets/js/13.8588b408.js"><link rel="prefetch" href="/assets/js/14.a0cdc1db.js"><link rel="prefetch" href="/assets/js/15.07f3e762.js"><link rel="prefetch" href="/assets/js/16.b8016821.js"><link rel="prefetch" href="/assets/js/17.a204583f.js"><link rel="prefetch" href="/assets/js/18.7cf4a886.js"><link rel="prefetch" href="/assets/js/19.5bc1daf5.js"><link rel="prefetch" href="/assets/js/20.76bb9008.js"><link rel="prefetch" href="/assets/js/21.92da1ba4.js"><link rel="prefetch" href="/assets/js/22.b23265b7.js"><link rel="prefetch" href="/assets/js/23.8a585638.js"><link rel="prefetch" href="/assets/js/24.9d1ef651.js"><link rel="prefetch" href="/assets/js/25.3d91f22d.js"><link rel="prefetch" href="/assets/js/26.9d2dceeb.js"><link rel="prefetch" href="/assets/js/27.83e2b49e.js"><link rel="prefetch" href="/assets/js/28.4499273c.js"><link rel="prefetch" href="/assets/js/29.99a6b525.js"><link rel="prefetch" href="/assets/js/30.e682a7a2.js"><link rel="prefetch" href="/assets/js/31.571206a8.js"><link rel="prefetch" href="/assets/js/32.a3f42292.js"><link rel="prefetch" href="/assets/js/33.4ac92fb7.js"><link rel="prefetch" href="/assets/js/34.9840e5c6.js"><link rel="prefetch" href="/assets/js/35.d2ce1211.js"><link rel="prefetch" href="/assets/js/4.5bdb60b7.js"><link rel="prefetch" href="/assets/js/5.dda116ce.js"><link rel="prefetch" href="/assets/js/6.db029cec.js"><link rel="prefetch" href="/assets/js/7.a62db18a.js"><link rel="prefetch" href="/assets/js/8.a5221b2a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.384604d6.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Ysh Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/stefan-ysh/stefan-ysh.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="img/me.jpg"> <div class="blogger-info"><h3>ysh</h3> <span>Elegance never goes out of style</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/stefan-ysh/stefan-ysh.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>说说 js unshift 的性能问题</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/adc19a/#问题描述" class="sidebar-link">问题描述</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/adc19a/#原因分析" class="sidebar-link">原因分析</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/adc19a/#解决方法" class="sidebar-link">解决方法</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-90597d10><div class="articleInfo" data-v-90597d10><!----> <div class="info" data-v-90597d10><div title="作者" class="author iconfont icon-touxiang" data-v-90597d10><a href="https://github.com/stefan-ysh" target="_blank" title="作者" class="beLink" data-v-90597d10>ysh</a></div> <div title="阅读时间约为0" class="date iconfont icon-riqi" data-v-90597d10><a href="javascript:;" data-v-90597d10>0 min</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-90597d10><a href="javascript:;" data-v-90597d10>2022-10-23</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-90597d10><a href="/categories/?category=javascript" data-v-90597d10>javascript </a></div></div></div></div> <!----> <div class="content-wrapper"><!----> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+          说说 js unshift 的性能问题
+        </h1> <!----> <div class="theme-vdoing-content content__default"><p><img src="/assets/img/js-arr-unshift-push.7d9b42a5.jpeg" alt="性能对比图"></p> <h2 id="问题描述"><a href="#问题描述" class="header-anchor">#</a> 问题描述</h2> <p>最近在做大屏项目，涉及到拖拽问题，我设计的是让最新拖拽的组件在最顶层(为了偷懒，图层列表直接拿组件列表就可以)，信心满满不会出任何问题，后面调试的过程中，发生浏览器频繁崩溃的问题，但是只是偶尔发生，就没过多在意。</p> <h2 id="原因分析"><a href="#原因分析" class="header-anchor">#</a> 原因分析</h2> <p>经过断点排查时，最终将问题定位在更新组件列表操作上，发现正是我之前为了偷懒写的<code>unshift</code>出现的问题。因为之前很少使用这个方法，所以为了验证，自己做了个简单的对比实验。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/*UNSHIFT*/</span>
+<span class="token keyword">var</span> unArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">&quot;unshift&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  unArr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">&quot;unshift&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*PUSH*/</span>
+<span class="token keyword">var</span> puArr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  puArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">&quot;push&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># the first time</span>
+
+unshift: <span class="token number">948</span>.592ms
+push: <span class="token number">3</span>.737ms
+
+<span class="token comment"># the second time</span>
+
+unshift: <span class="token number">943</span>.298ms
+push: <span class="token number">3</span>.428ms
+
+<span class="token comment"># the third time</span>
+
+unshift: <span class="token number">936</span>.947ms
+push: <span class="token number">3</span>.403ms
+</code></pre></div><p>通过以上结果对比，可以发现，在数量相同(100000)的情况下，<code>unshift</code>方法操作所花的时间是<code>push</code>的 300 多倍(不同系统或有差异)，这是因为<code>unshift</code>方法是将数据添加到数组的前面，也就意味着原有元素的位置将要向后移一位，而<code>push</code>则直接添加到数组最后，不对其他元素的位置造成影响，也就少去了更换位置的步骤，如果数量够多，差距将呈指数增加。
+下图为网络资料，可参考</p> <p><img src="/assets/img/unshift-push-performance.87694854.jpeg" alt="问题图片"></p> <p>那么，如果我们要实现这种方法，应该怎么做呢？</p> <h2 id="解决方法"><a href="#解决方法" class="header-anchor">#</a> 解决方法</h2> <p>可将<code>unshift</code>分解为<code>push</code> + <code>reverse</code>来实现同样的效果,为了保险起见，我这里也准备了一个测试代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// /*UNSHIFT*/</span>
+<span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">&quot;time1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  arr1<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">&quot;time1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// /*PUSH + REVERSE*/</span>
+
+<span class="token keyword">const</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">&quot;time2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  arr2<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+arr2<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">&quot;time2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># the first time</span>
+
+time1: <span class="token number">9</span>.87ms
+time2: <span class="token number">0</span>.443ms
+
+<span class="token comment"># the second time</span>
+
+time1: <span class="token number">9</span>.747ms
+time2: <span class="token number">0</span>.428ms
+
+<span class="token comment"># the third time</span>
+
+time1: <span class="token number">9</span>.691ms
+time2: <span class="token number">0</span>.446ms
+</code></pre></div><p>以上实验可以看出，<code>push + reverse</code>两种操作加起来所用时间也只是<code>unshift</code>的<code>1/22</code>而已。</p></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/11/06, 12:34:43</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/cf36af/"><div>blender 布料碰撞圆球效果</div></a> <span>11-05</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/78d272/"><div>Blender common shortcut keys</div></a> <span>11-05</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/55bc17/"><div>利用 style 标签实现 css 样式编写过程可视化</div></a> <span>10-30</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <!----> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b0cfaad7.js" defer></script><script src="/assets/js/2.e4b24d74.js" defer></script><script src="/assets/js/3.2aa4cb6b.js" defer></script><script src="/assets/js/9.320bd368.js" defer></script>
+  </body>
+</html>

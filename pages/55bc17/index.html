@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>利用 style 标签实现 css 样式编写过程可视化 | Ysh Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/favicon.ico">
+    <script data-ad-client="ca-pub-7828333725993554" async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <meta name="description" content="我的个人博客">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,源码，感悟，Java,Pythn,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.384604d6.css" as="style"><link rel="preload" href="/assets/js/app.b0cfaad7.js" as="script"><link rel="preload" href="/assets/js/2.e4b24d74.js" as="script"><link rel="preload" href="/assets/js/3.2aa4cb6b.js" as="script"><link rel="preload" href="/assets/js/29.99a6b525.js" as="script"><link rel="prefetch" href="/assets/js/10.279606c3.js"><link rel="prefetch" href="/assets/js/11.c8085ce8.js"><link rel="prefetch" href="/assets/js/12.609df56a.js"><link rel="prefetch" href="/assets/js/13.8588b408.js"><link rel="prefetch" href="/assets/js/14.a0cdc1db.js"><link rel="prefetch" href="/assets/js/15.07f3e762.js"><link rel="prefetch" href="/assets/js/16.b8016821.js"><link rel="prefetch" href="/assets/js/17.a204583f.js"><link rel="prefetch" href="/assets/js/18.7cf4a886.js"><link rel="prefetch" href="/assets/js/19.5bc1daf5.js"><link rel="prefetch" href="/assets/js/20.76bb9008.js"><link rel="prefetch" href="/assets/js/21.92da1ba4.js"><link rel="prefetch" href="/assets/js/22.b23265b7.js"><link rel="prefetch" href="/assets/js/23.8a585638.js"><link rel="prefetch" href="/assets/js/24.9d1ef651.js"><link rel="prefetch" href="/assets/js/25.3d91f22d.js"><link rel="prefetch" href="/assets/js/26.9d2dceeb.js"><link rel="prefetch" href="/assets/js/27.83e2b49e.js"><link rel="prefetch" href="/assets/js/28.4499273c.js"><link rel="prefetch" href="/assets/js/30.e682a7a2.js"><link rel="prefetch" href="/assets/js/31.571206a8.js"><link rel="prefetch" href="/assets/js/32.a3f42292.js"><link rel="prefetch" href="/assets/js/33.4ac92fb7.js"><link rel="prefetch" href="/assets/js/34.9840e5c6.js"><link rel="prefetch" href="/assets/js/35.d2ce1211.js"><link rel="prefetch" href="/assets/js/4.5bdb60b7.js"><link rel="prefetch" href="/assets/js/5.dda116ce.js"><link rel="prefetch" href="/assets/js/6.db029cec.js"><link rel="prefetch" href="/assets/js/7.a62db18a.js"><link rel="prefetch" href="/assets/js/8.a5221b2a.js"><link rel="prefetch" href="/assets/js/9.320bd368.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.384604d6.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Ysh Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/stefan-ysh/stefan-ysh.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="img/me.jpg"> <div class="blogger-info"><h3>ysh</h3> <span>Elegance never goes out of style</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/" class="nav-link">分类</a></div><div class="nav-item"><a href="/archives/" class="nav-link">归档</a></div> <a href="https://github.com/stefan-ysh/stefan-ysh.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>利用 style 标签实现 css 样式编写过程可视化</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/55bc17/#描述" class="sidebar-link">描述</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/55bc17/#演示" class="sidebar-link">演示</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/55bc17/#待办" class="sidebar-link">待办</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/55bc17/#附录" class="sidebar-link">附录</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-90597d10><div class="articleInfo" data-v-90597d10><!----> <div class="info" data-v-90597d10><div title="作者" class="author iconfont icon-touxiang" data-v-90597d10><a href="https://github.com/stefan-ysh" target="_blank" title="作者" class="beLink" data-v-90597d10>ysh</a></div> <div title="阅读时间约为0" class="date iconfont icon-riqi" data-v-90597d10><a href="javascript:;" data-v-90597d10>0 min</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-90597d10><a href="javascript:;" data-v-90597d10>2022-10-30</a></div> <div title="分类" class="date iconfont icon-wenjian" data-v-90597d10><a href="/categories/?category=css" data-v-90597d10>css </a><a href="/categories/?category=javascript" data-v-90597d10>javascript </a></div></div></div></div> <!----> <div class="content-wrapper"><!----> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+          利用 style 标签实现 css 样式编写过程可视化
+        </h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="描述"><a href="#描述" class="header-anchor">#</a> 描述</h2> <p>在推上看到一个博主分享了<code>style</code>标签也可以当成元素来使用的视频，感觉这个思路挺新鲜，转而联想到是不是可以做一个样式编写过程可视化的功能，也就是所说的所见即所得。</p> <h2 id="演示"><a href="#演示" class="header-anchor">#</a> 演示</h2> <p>之前看到有些博客首页就会显示一边写样式，一边呈现效果的案例，想着可以用这个方法试一下，下面是我写的 <code>Demo</code>。</p> <html lang="en"><head><style>
+    #container {
+ display: flex;
+ align-items: center;
+ height: 200px;
+}
+    #style-block {
+ width: 400px;
+ max-height: 200px;
+ display: block;
+ font-family: monospace;
+ font-size: 15px;
+ line-height: 40px;
+ background: #212327;
+ color: white;
+ overflow: scroll;
+ margin-right: 10px;
+}
+</style></head> <body><div id="container"><style id="style-block"></style> <div class="factory"><div class="crate"></div> <div class="belt b1"></div> <div class="belt b2"></div> <div class="motor m1"></div> <div class="motor m2"></div></div></div></body> <script>
+function renderFun(el, styleStr) {
+  let i = 0;
+  const timer = setInterval(() =&gt; {
+    const str = `${styleStr.substr(0, i)}`;
+    if (i === styleStr.length - 1) {
+      el.style.display = 'none';
+      return clearInterval(timer);
+    }
+    el.innerText = str;
+    i++;
+    el.scrollBy({
+      left: 0,
+      top: 1000,
+      behavior: 'smooth',
+    });
+  }, 90);
+}
+const styleStr = `.factory {
+  position: relative;
+}
+.crate {
+  position: absolute;  
+  background: #b08f7c;
+  width: 55px;
+  height: 56px;
+  border: 1px solid #2092d1;
+  animation: crate 10s linear infinite;
+}
+.belt {
+  position: absolute;
+  width: 300px;  
+  border: 1px dashed #60b0ff;  
+}
+.b1 {
+  top: 0;
+  animation: moveBeltLR .15s linear infinite;
+}
+.b2 {
+  top: 58px;  
+  animation: moveBeltRL .15s linear infinite;
+}
+.motor {  
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #60b0ff;
+  animation: spinMotor 2.2s linear infinite;
+}
+.motor:before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 15px;
+  width: 20px;
+  height: 2px;  
+  display:block;
+  background: #60b0ff;
+  border-radius: 5px;
+}
+.motor:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 24px;
+  width: 2px;
+  height: 20px;  
+  display:block;
+  border-radius: 5px;
+  background: #60b0ff;
+}
+.m1 {
+  left: 10px;  
+}
+.m2 {
+  left: 310px;  
+}
+@keyframes moveBeltLR {
+  from {
+    left: 35px;
+  }
+  to {
+    left: 40px;
+  }
+}
+@keyframes moveBeltRL {
+  from {
+    left: 40px;
+  }
+  to {
+    left: 35px;
+  }
+}
+@keyframes spinMotor {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes crate {
+  0% {
+    bottom:20px;
+    left: 40px;
+    transform: rotate(0deg);
+    opacity:0;
+  }
+  3% {
+    bottom:0px;
+    left: 40px;
+    transform: rotate(0deg);
+    opacity:0.5;
+  }
+  5% {
+    bottom:0px;
+    left: 50px;
+    transform: rotate(0deg);
+      opacity:1;
+  }
+  15% {
+    bottom:0px;
+    left: 80px;
+    transform: rotate(0deg);
+      opacity:1;
+  }
+  25% {
+    bottom:0px;
+    left: 100px;
+    transform: rotate(0deg);
+      opacity:1;
+  }
+  90%  {
+    bottom:0px;
+    left: 320px;
+    transform: rotate(0deg);
+  }
+  92%  {
+    bottom:-10px;
+    left: 340px;
+    transform: rotate(45deg);
+  }
+  95% {
+    bottom:-50px;
+    left: 380px;
+    transform: rotate(90deg);
+    opacity:1;
+  }
+  100% {
+    bottom:-50px;
+    left: 380px;
+    transform: rotate(90deg);
+    opacity:0;
+  }
+}`;
+renderFun(document.getElementById('style-block'), styleStr);
+</script></html> <h2 id="待办"><a href="#待办" class="header-anchor">#</a> 待办</h2> <ul><li>样式代码换行</li></ul> <h2 id="附录"><a href="#附录" class="header-anchor">#</a> 附录</h2> <ul><li><a href="https://twitter.com/wesbos/status/1586360039174209536?s=20&amp;t=ilkYTDynUExMijw2jGAYkg" target="_blank" rel="noopener noreferrer">视频地址<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://codepen.io/stefan_ysh/pen/PoaPWJe" target="_blank" rel="noopener noreferrer">Demo Link<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/11/09, 00:28:13</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/cf36af/"><div>blender 布料碰撞圆球效果</div></a> <span>11-05</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/78d272/"><div>Blender common shortcut keys</div></a> <span>11-05</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/89a60c/"><div>Vue3 + ElementPlus 切换网站主题</div></a> <span>10-29</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <!----> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b0cfaad7.js" defer></script><script src="/assets/js/2.e4b24d74.js" defer></script><script src="/assets/js/3.2aa4cb6b.js" defer></script><script src="/assets/js/29.99a6b525.js" defer></script>
+  </body>
+</html>
