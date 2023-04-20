@@ -3,8 +3,10 @@ title: Vue3 + ElementPlus 切换网站主题
 date: 2022-10-29 00:13:28
 permalink: /pages/89a60c/
 sidebar: auto
-categories:
+categories: 
   - vue
+tags: 
+  - 
 ---
 
 ![如何更改 vue + element plus 主题](../../../.vuepress/public/post/share/vue/vue3-elementplus-change-theme/how-to-change-vue3-theme.jpg)

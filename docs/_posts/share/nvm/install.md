@@ -3,8 +3,10 @@ title: nvm 的安装
 date: 2022-09-27 23:36:39
 permalink: /pages/35870b/
 sidebar: auto
-categories:
+categories: 
   - nvm
+tags: 
+  - 
 ---
 
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/244005/1660988804447-af5f039e-2938-4956-af4f-ed9cdf2e0ba3.png#clientId=u619b5875-959f-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=106&id=ue4a731e4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=106&originWidth=300&originalType=binary&ratio=1&rotation=0&showTitle=false&size=9774&status=done&style=none&taskId=ue3a5ac04-3794-40af-ad7d-c390ca94d37&title=&width=300)

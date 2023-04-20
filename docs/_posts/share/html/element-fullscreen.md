@@ -1,13 +1,13 @@
 ---
 title: js 实现 html 元素全屏展示
 date: 2022-05-21 00:00:00
-categories:
+categories: 
   - html
-# tags:
-#   - html
 isShowComments: false
 permalink: /pages/6152b6/
 sidebar: auto
+tags: 
+  - 
 ---
 
 ## 效果

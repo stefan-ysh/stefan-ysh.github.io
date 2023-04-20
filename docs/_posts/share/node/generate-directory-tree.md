@@ -1,14 +1,13 @@
 ---
 title: 利用js代码生成目录结构树
 date: 2022-01-19 00:00:00
-# sticky: 1
-categories:
+categories: 
   - node
-# tags:
-#   - node
 isShowComments: true
 permalink: /pages/fa4c16/
 sidebar: auto
+tags: 
+  - 
 ---
 
 ## 说明

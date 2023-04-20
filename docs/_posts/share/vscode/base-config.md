@@ -3,8 +3,10 @@ title: vacode 基础配置
 date: 2022-09-27 23:28:09
 permalink: /pages/77b395/
 sidebar: auto
-categories:
+categories: 
   - vscode
+tags: 
+  - 
 ---
 
 ![](https://cdn.nlark.com/yuque/0/2022/jpeg/244005/1658134265931-1d85831e-4679-4c31-9f60-0de1d42c236d.jpeg#clientId=u5c087abe-4083-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=199&id=u91699821&originHeight=500&originWidth=752&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u914370fe-45e8-42ae-86bf-941f561761c&title=&width=300)

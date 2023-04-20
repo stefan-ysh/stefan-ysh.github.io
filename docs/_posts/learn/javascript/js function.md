@@ -3,8 +3,10 @@ title: js 函数
 date: 2022-09-26 23:53:28
 permalink: /pages/673fc7/
 sidebar: auto
-categories:
+categories: 
   - javascript
+tags: 
+  - 
 ---
 
 ## 函数声明方法

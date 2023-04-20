@@ -3,8 +3,10 @@ title: node-sass 与 node 的版本对应关系
 date: 2022-10-23 23:07:30
 permalink: /pages/081a3e/
 sidebar: auto
-categories:
+categories: 
   - node
+tags: 
+  - 
 ---
 
 ![fix node sass](../../../.vuepress/public/post/share/node/node-sass-version/fix-nodesass-version.jpeg)

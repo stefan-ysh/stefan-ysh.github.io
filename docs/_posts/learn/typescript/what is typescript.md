@@ -3,8 +3,10 @@ title: 什么是typescript
 date: 2022-09-29 21:31:40
 permalink: /pages/01260f/
 sidebar: auto
-categories:
+categories: 
   - typescript
+tags: 
+  - 
 ---
 
 > Typed JavaScript at Any Scale.

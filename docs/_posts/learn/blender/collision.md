@@ -3,8 +3,10 @@ title: blender 布料碰撞圆球效果
 date: 2022-11-05 23:59:31
 permalink: /pages/cf36af/
 sidebar: auto
-categories:
+categories: 
   - blender
+tags: 
+  - 
 ---
 
 ## 成品展示

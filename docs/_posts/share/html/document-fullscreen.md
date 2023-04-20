@@ -1,13 +1,13 @@
 ---
 title: js 实现页面全屏
 date: 2022-05-21 00:00:00
-categories:
+categories: 
   - html
-# tags:
-#   - html
 isShowComments: false
 permalink: /pages/a06fdc/
 sidebar: auto
+tags: 
+  - 
 ---
 ## 效果
 
