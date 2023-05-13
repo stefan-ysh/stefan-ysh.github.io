@@ -1,5 +1,5 @@
 ---
-title: 说说 js unshift 的性能问题
+title:  【EN】Performance Issues with unshift in JavaScript Arrays
 date: 2022-10-23 21:39:49
 permalink: /pages/adc19a/
 sidebar: auto
@@ -8,16 +8,15 @@ categories:
 tags: 
   - 
 ---
-![性能对比图](../../../.vuepress/public/post/share/javascript/array-unshift-performance/js-arr-unshift-push.jpeg)
+![Performance comparison picture](../../../.vuepress/public/post/share/javascript/array-unshift-performance/js-arr-unshift-push.jpeg)
 
+## Problem description
 
-## 问题描述
+Recently, while working on a BigScreen project that involved drag and drop functionality, I designed it so that the latest dragged component would be placed on the topmost layer (to save time, I used the component list as the layer list). I was confident that there would be no issues, but during the debugging process, the browser crashed frequently. However, as it happened only occasionally, I didn't pay too much attention to it.
 
-最近在做大屏项目，涉及到拖拽问题，我设计的是让最新拖拽的组件在最顶层(为了偷懒，图层列表直接拿组件列表就可以)，信心满满不会出任何问题，后面调试的过程中，发生浏览器频繁崩溃的问题，但是只是偶尔发生，就没过多在意。
+## Reason analysis
 
-## 原因分析
-
-经过断点排查时，最终将问题定位在更新组件列表操作上，发现正是我之前为了偷懒写的`unshift`出现的问题。因为之前很少使用这个方法，所以为了验证，自己做了个简单的对比实验。
+After debugging with breakpoints, I finally narrowed down the issue to the operation of updating the component list. I discovered that the problem was caused by the unshift method that I had used earlier to save time. Since I rarely used this method before, I conducted a simple comparative experiment to verify this
 
 ```js
 /*UNSHIFT*/
@@ -58,16 +57,18 @@ unshift: 936.947ms
 push: 3.403ms
 ```
 
-通过以上结果对比，可以发现，在数量相同(100000)的情况下，`unshift`方法操作所花的时间是`push`的 300 多倍(不同系统或有差异)，这是因为`unshift`方法是将数据添加到数组的前面，也就意味着原有元素的位置将要向后移一位，而`push`则直接添加到数组最后，不对其他元素的位置造成影响，也就少去了更换位置的步骤，如果数量够多，差距将呈指数增加。
-下图为网络资料，可参考
+The unshift method in JavaScript arrays is used to add one or more elements to the beginning of an array. However, its performance issues are mainly due to the need to reallocate memory space when adding elements. This is usually slower than using the push method to add elements to the end of the array, because push only needs to add elements to the existing memory block.
 
+By comparing the results, we can see that for the same number of elements (100000), the unshift method takes over 300 times longer than push (may vary based on the system). This is because the unshift method adds data to the beginning of the array, which means that the positions of the existing elements will be shifted back by one. In contrast, push adds an element directly to the end of the array without affecting the positions of other elements, thus eliminating the need to rearrange the positions. As the number of elements increases, the performance gap will become even more significant.
+
+If you require high-performance array operations, consider using other methods to maintain the array. For example, use the push method to add elements to the end of the array and the shift method to remove elements from the beginning of the array. Additionally, you can use the splice method in JavaScript to add or remove elements at any position in the array without the need to reallocate memory space
 ![问题图片](../../../.vuepress/public/post/share/javascript/array-unshift-performance/unshift-push-performance.jpeg)
 
-那么，如果我们要实现这种方法，应该怎么做呢？
+So how can we achieve this functionality in JavaScript arrays? Here are a few approaches you can try:
 
-## 解决方法
+## Solution
 
-可将`unshift`分解为`push` + `reverse`来实现同样的效果,为了保险起见，我这里也准备了一个测试代码
+You can achieve the same effect as unshift by breaking it down into push + reverse. For safety, I have also prepared a test code snippet below
 
 ```js
 // /*UNSHIFT*/
@@ -109,4 +110,4 @@ time1: 9.691ms
 time2: 0.446ms
 ```
 
-以上实验可以看出，`push + reverse`两种操作加起来所用时间也只是`unshift`的`1/22`而已。
+The above experiment shows that the total time taken for the push + reverse operations is only 1/22 of the time taken for the unshift operation.

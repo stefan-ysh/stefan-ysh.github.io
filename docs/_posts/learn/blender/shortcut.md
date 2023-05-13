@@ -1,5 +1,5 @@
 ---
-title: Blender common shortcut keys
+title: 【EN】Blender common shortcut keys
 date: 2022-11-05 22:10:49
 permalink: /pages/78d272/
 sidebar: auto
