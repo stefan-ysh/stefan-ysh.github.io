@@ -12,8 +12,4 @@ export default ({
 }) => {
   Vue.use(ElementUI);
   // window.Vue = vue; // 使页面中可以使用Vue构造函数 （使页面中的vue demo生效）
-  // 在这里添加你的脚本引入
-  const script = document.createElement('script')
-  script.src = '/_vercel/insights/script.js'
-  document.head.appendChild(script)
 };

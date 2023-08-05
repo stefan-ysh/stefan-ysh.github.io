@@ -134,6 +134,7 @@ module.exports = {
         src: "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
       },
     ],
+    ['script', { src: '/_vercel/insights/script.js'}],
     ["script", { src: "https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" }],
     [
       "script",
